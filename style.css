@@ -1,0 +1,47 @@
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: linear-gradient(to bottom, #0b1f3a, #09172c);
+    color: white;
+    text-align: center;
+}
+header {
+    padding: 40px 20px 20px;
+}
+.logo {
+    width: 120px;
+    height: auto;
+}
+h1 {
+    margin: 10px 0 0;
+    font-size: 36px;
+}
+h2 {
+    margin: 5px 0 30px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #ccc;
+}
+section {
+    padding: 20px 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.product img {
+    width: 120px;
+    margin-top: 10px;
+}
