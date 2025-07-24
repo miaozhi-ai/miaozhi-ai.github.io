@@ -48,7 +48,7 @@
 <body>
   <div class="container">
     <div class="lang-toggle">
-      <a href="javascript:void(0);" onclick="switchLang('en')">
+      <a href="javascript:void(0);" onclick="toggleLang()">
         <img id="flag" src="../images/china-flag.png" alt="Country Flag"> <!-- China flag -->
       </a>
     </div>
@@ -175,8 +175,14 @@
   </div>
 
   <script>
-    // Check for saved language preference or default to 'en'
-    const savedLang = localStorage.getItem('language') || 'en';
+    function toggleLang() {
+      const currentLang = localStorage.getItem('language') || 'en';
+      if (currentLang === 'en') {
+        switchLang('zh');
+      } else {
+        switchLang('en');
+      }
+    }
 
     // Set the appropriate language content based on saved language
     function switchLang(lang) {
@@ -195,6 +201,8 @@
 
     // Initialize language content based on saved language preference
     window.onload = function() {
+      // Check for saved language preference or default to 'en'
+      const savedLang = localStorage.getItem('language') || 'en';
       switchLang(savedLang);
     }
   </script>
