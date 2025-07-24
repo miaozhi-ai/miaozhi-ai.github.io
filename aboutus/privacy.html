@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Terms of Service</title>
+  <title>Privacy Policy</title>
   <link rel="stylesheet" href="https://waniyiwa.fun/style.css" />
   <style>
     body {
@@ -22,66 +22,181 @@
     p, li, ul, h1, h2, h3 {
       text-align: left !important;
     }
+
+    .lang-toggle {
+      position: absolute;
+      top: 10px;
+      right: 30px; /* Adjusted position */
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .lang-toggle img {
+      width: 30px; /* Increased flag size */
+      margin-left: 10px;
+    }
+
+    .english-content, .chinese-content {
+      display: none;
+    }
+
+    .english-content.active, .chinese-content.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Privacy Policy</h1>
-    <p><em>Last updated: July 10, 2025</em></p>
+    <div class="lang-toggle">
+      <a href="javascript:void(0);" onclick="switchLang('en')">
+        <img id="flag" src="../images/china-flag.png" alt="Country Flag"> <!-- China flag -->
+      </a>
+    </div>
 
-    <p>CHENGDU MIAOZHI TECHNOLOGY CO., LTD. ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we handle personal information in our mobile applications and related services ("Services").</p>
+    <!-- English Content -->
+    <div class="english-content">
+      <h1>Privacy Policy</h1>
+      <p><em>Last updated: July 10, 2025</em></p>
 
-    <h2>1. We Do Not Collect Personal Information</h2>
-    <p>Our applications do not require you to provide any personally identifiable information (such as name, email address, or phone number) to use the core features. We do not store or collect any sensitive personal data on our own servers.</p>
+      <p>CHENGDU MIAOZHI TECHNOLOGY CO., LTD. ("we", "us", or "our") is committed to protecting your privacy. This Privacy Policy explains how we handle personal information in our mobile applications and related services ("Services").</p>
 
-    <h2>2. Use of Third-Party SDKs</h2>
-    <p>We may integrate third-party SDKs in our applications for the purposes of analytics, advertising, and crash reporting. These SDKs may collect certain information automatically, such as:</p>
-    <ul>
-      <li>Device type, model, and operating system</li>
-      <li>Language settings and country/region</li>
-      <li>App usage behavior (e.g. clicks, session duration)</li>
-      <li>Advertising ID (e.g. IDFA or GAID)</li>
-      <li>IP address (for approximate location)</li>
-    </ul>
-    <p>Examples of such third-party services include (but are not limited to):</p>
-    <ul>
-      <li>Google AdMob (for in-app ads)</li>
-      <li>Firebase / Google Analytics (for usage statistics)</li>
-      <li>Facebook Audience Network</li>
-      <li>Appsflyer, Adjust or other attribution tools</li>
-    </ul>
+      <h2>1. We Do Not Collect Personal Information</h2>
+      <p>Our applications do not require you to provide any personally identifiable information (such as name, email address, or phone number) to use the core features. We do not store or collect any sensitive personal data on our own servers.</p>
 
-    <h2>3. Children's Privacy</h2>
-    <p>Our apps are not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe that your child has provided us with personal data, please contact us immediately.</p>
+      <h2>2. Use of Third-Party SDKs</h2>
+      <p>We may integrate third-party SDKs in our applications for the purposes of analytics, advertising, and crash reporting. These SDKs may collect certain information automatically, such as:</p>
+      <ul>
+        <li>Device type, model, and operating system</li>
+        <li>Language settings and country/region</li>
+        <li>App usage behavior (e.g., clicks, session duration)</li>
+        <li>Advertising ID (e.g., IDFA or GAID)</li>
+        <li>IP address (for approximate location)</li>
+      </ul>
+      <p>Examples of such third-party services include (but are not limited to):</p>
+      <ul>
+        <li>Google AdMob (for in-app ads)</li>
+        <li>Firebase / Google Analytics (for usage statistics)</li>
+        <li>Facebook Audience Network</li>
+        <li>Appsflyer, Adjust, or other attribution tools</li>
+      </ul>
 
-    <h2>4. Data Security</h2>
-    <p>We do not store any personal information on our servers. However, we encourage users to be aware of the data collection practices of third-party SDKs. We take reasonable technical measures to ensure the security of our applications.</p>
+      <h2>3. Children's Privacy</h2>
+      <p>Our apps are not directed to children under the age of 13. We do not knowingly collect personal information from children. If you believe that your child has provided us with personal data, please contact us immediately.</p>
 
-    <h2>5. Data Retention</h2>
-    <p>As we do not collect personal data directly, we do not retain any such information. Third-party providers may retain certain data as per their own retention policies.</p>
+      <h2>4. Data Security</h2>
+      <p>We do not store any personal information on our servers. However, we encourage users to be aware of the data collection practices of third-party SDKs. We take reasonable technical measures to ensure the security of our applications.</p>
 
-    <h2>6. Your Choices</h2>
-    <p>You can manage your privacy preferences through your device settings, such as:</p>
-    <ul>
-      <li>Resetting your advertising ID</li>
-      <li>Limiting ad tracking</li>
-      <li>Opting out of personalized ads</li>
-      <li>Disabling analytics (if available in settings)</li>
-    </ul>
+      <h2>5. Data Retention</h2>
+      <p>As we do not collect personal data directly, we do not retain any such information. Third-party providers may retain certain data as per their own retention policies.</p>
 
-    <h2>7. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with a new effective date. We recommend reviewing this page periodically.</p>
+      <h2>6. Your Choices</h2>
+      <p>You can manage your privacy preferences through your device settings, such as:</p>
+      <ul>
+        <li>Resetting your advertising ID</li>
+        <li>Limiting ad tracking</li>
+        <li>Opting out of personalized ads</li>
+        <li>Disabling analytics (if available in settings)</li>
+      </ul>
 
-    <h2>8. Contact Us</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, feel free to contact us at:</p>
-    <p>
-      <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong><br />
-      Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
-      Address: No. 1916, 19th Floor, Unit 1, Building 3, No. 500 Jiaozi Avenue, Chengdu High tech Zone, China (Sichuan) Pilot Free Trade Zone, Chengdu
-    </p>
+      <h2>7. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with a new effective date. We recommend reviewing this page periodically.</p>
 
-    <hr />
-    <p>We value your trust and are committed to ensuring your privacy.</p>
+      <h2>8. Contact Us</h2>
+      <p>If you have any questions or concerns about this Privacy Policy, feel free to contact us at:</p>
+      <p>
+        <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong><br />
+        Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
+        Address: No. 1916, 19th Floor, Unit 1, Building 3, No. 500 Jiaozi Avenue, Chengdu High tech Zone, China (Sichuan) Pilot Free Trade Zone, Chengdu
+      </p>
+
+      <hr />
+      <p>We value your trust and are committed to ensuring your privacy.</p>
+    </div>
+
+    <!-- Chinese Content -->
+    <div class="chinese-content">
+      <h1>隐私政策</h1>
+      <p><em>最后更新日期：2025年7月10日</em></p>
+
+      <p>成都妙至科技有限公司（“我们”，“我们公司”或“我们的”）致力于保护您的隐私。本隐私政策解释了我们在移动应用程序及相关服务（“服务”）中如何处理个人信息。</p>
+
+      <h2>1. 我们不收集个人信息</h2>
+      <p>我们的应用程序不要求您提供任何个人身份信息（如姓名、电子邮件地址或电话号码）以使用核心功能。我们不会在我们的服务器上存储或收集任何敏感的个人数据。</p>
+
+      <h2>2. 第三方SDK的使用</h2>
+      <p>我们可能会在应用程序中集成第三方SDK，用于分析、广告和崩溃报告等目的。这些SDK可能会自动收集某些信息，如：</p>
+      <ul>
+        <li>设备类型、型号和操作系统</li>
+        <li>语言设置和国家/地区</li>
+        <li>应用使用行为（例如点击、会话时长）</li>
+        <li>广告ID（例如IDFA或GAID）</li>
+        <li>IP地址（用于大致位置）</li>
+      </ul>
+      <p>这些第三方服务的示例包括（但不限于）：</p>
+      <ul>
+        <li>Google AdMob（用于应用内广告）</li>
+        <li>Firebase / Google Analytics（用于使用统计数据）</li>
+        <li>Facebook Audience Network</li>
+        <li>Appsflyer、Adjust或其他归因工具</li>
+      </ul>
+
+      <h2>3. 儿童隐私</h2>
+      <p>我们的应用程序不针对13岁以下的儿童。如果您认为您的孩子向我们提供了个人数据，请立即与我们联系。</p>
+
+      <h2>4. 数据安全</h2>
+      <p>我们不会在服务器上存储任何个人信息。然而，我们鼓励用户了解第三方SDK的数据收集行为。我们采取合理的技术措施以确保应用程序的安全性。</p>
+
+      <h2>5. 数据保留</h2>
+      <p>由于我们不直接收集个人数据，因此我们不会保留任何此类信息。第三方服务商可能会根据其自己的保留政策保留某些数据。</p>
+
+      <h2>6. 您的选择</h2>
+      <p>您可以通过设备设置管理您的隐私偏好，例如：</p>
+      <ul>
+        <li>重置广告ID</li>
+        <li>限制广告跟踪</li>
+        <li>选择退出个性化广告</li>
+        <li>禁用分析（如果设置中可用）</li>
+      </ul>
+
+      <h2>7. 政策的变更</h2>
+      <p>我们可能会不时更新本隐私政策。任何变更将发布在此页面上，并标明新的生效日期。我们建议定期查看此页面。</p>
+
+      <h2>8. 联系我们</h2>
+      <p>如果您对本隐私政策有任何问题或疑虑，请随时联系我们：</p>
+      <p>
+        <strong>成都妙至科技有限公司</strong><br />
+        邮箱：<a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
+        地址：中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号
+      </p>
+
+      <hr />
+      <p>我们重视您的信任，并致力于确保您的隐私。</p>
+    </div>
   </div>
+
+  <script>
+    // Check for saved language preference or default to 'en'
+    const savedLang = localStorage.getItem('language') || 'en';
+
+    // Set the appropriate language content based on saved language
+    function switchLang(lang) {
+      if (lang === 'en') {
+        localStorage.setItem('language', 'en');
+        document.querySelector('.english-content').classList.add('active');
+        document.querySelector('.chinese-content').classList.remove('active');
+        document.getElementById('flag').src = '../images/usa-flag.png'; // Switch to US flag
+      } else {
+        localStorage.setItem('language', 'zh');
+        document.querySelector('.chinese-content').classList.add('active');
+        document.querySelector('.english-content').classList.remove('active');
+        document.getElementById('flag').src = '../images/china-flag.png'; // Switch to China flag
+      }
+    }
+
+    // Initialize language content based on saved language preference
+    window.onload = function() {
+      switchLang(savedLang);
+    }
+  </script>
 </body>
 </html>
