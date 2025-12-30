@@ -28,34 +28,48 @@ body {
     min-height: 100vh;
 }
 
-/* ===== 头部 Hero ===== */
+/* ===== Hero 区 ===== */
 .hero {
-    padding: 64px 20px 40px;
+    padding: 32px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Logo */
 .logo {
-    width: 160px;
+    width: 200px; /* 原来160px */
     height: auto;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
 }
 
+/* 中文公司名 */
 h1 {
     margin: 0;
-    font-size: clamp(28px, 6vw, 40px);
-    font-weight: 600;
+    font-size: clamp(20px, 5vw, 28px); /* 略小于英文名 */
+    font-weight: 500;
     letter-spacing: 0.5px;
+    color: #ffffff;
 }
 
+/* 英文公司名 */
 h2 {
-    margin-top: 8px;
-    font-size: clamp(14px, 3.5vw, 18px);
+    margin-top: 6px;
+    font-size: clamp(16px, 4vw, 14px); /* 稍大一些，突出英文 */
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.6px;
 }
 
 /* ===== 信息区（玻璃质感，弱分层） ===== */
+/* ===== 信息区与产品区对齐 ===== */
 .info {
-    max-width: 760px;
+    padding: 40px 20px;
+}
+
+/* 真正的卡片 */
+.info-inner {
+    max-width: 1100px;
     margin: 0 auto;
     padding: 32px 24px;
 }
@@ -105,10 +119,8 @@ a:hover {
 
 /* ===== 页脚（自然融入背景） ===== */
 .footer {
-    margin-top: 60px;
-    padding: 24px 16px 40px;
-    font-size: 13px;
-    color: rgba(255, 255, 255, 0.55);
+    margin-top: 0;
+    padding: 0px 16px 40px;
 }
 
 /* ===== 移动端优化 ===== */
@@ -129,3 +141,175 @@ a:hover {
         font-size: 14px;
     }
 }
+
+/* ===== 产品展示区 ===== */
+.products {
+    padding: 0px 20px 0px;
+}
+
+
+.products::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(
+            600px 300px at 50% 0%,
+            rgba(160, 120, 255, 0.18),
+            transparent 70%
+        );
+    pointer-events: none;
+}
+
+.products-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* ===== 标题样式（OpenAI 风） ===== */
+.section-title {
+    font-size: clamp(26px, 5vw, 36px);
+    font-weight: 600;
+    margin-bottom: 12px;
+    letter-spacing: 0.4px;
+}
+
+.section-desc {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.65);
+    margin-bottom: 56px;
+}
+
+/* ===== 产品卡片布局 ===== */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 28px;
+}
+
+/* ===== 产品卡片（高级感关键） ===== */
+.product-card {
+    padding: 32px 26px;
+    border-radius: 22px;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.10),
+        rgba(255, 255, 255, 0.03)
+    );
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow:
+        0 30px 80px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    text-align: left;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.45),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+
+/* ===== 图标 ===== */
+.product-icon {
+    font-size: 28px;
+    margin-bottom: 18px;
+    filter: drop-shadow(0 4px 12px rgba(180, 120, 255, 0.4));
+}
+
+/* ===== 卡片标题 ===== */
+.product-card h4 {
+    margin: 0 0 10px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* ===== 卡片描述 ===== */
+.product-card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ===== 移动端优化 ===== */
+@media (max-width: 480px) {
+    .products {
+        padding: 70px 18px 60px;
+    }
+
+    .section-desc {
+        font-size: 14px;
+    }
+
+    .product-card {
+        padding: 26px 22px;
+    }
+}
+
+/* ===== 产品卡片作为链接时的修正 ===== */
+.product-card {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.product-card:hover {
+    text-decoration: none;
+}
+
+/* 点击反馈（移动端非常重要） */
+.product-card:active {
+    transform: translateY(-2px) scale(0.995);
+}
+
+/* ===== Slogan ===== */
+.slogan {
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.slogan span {
+    display: block;
+    margin-top: 6px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.55);
+}
+
+/* 移动端 */
+@media (max-width: 480px) {
+    .slogan {
+        font-size: 14px;
+    }
+}
+
+/* ===== 微弱光边随鼠标移动（OpenAI 风） ===== */
+.glow-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        220px circle at var(--x, 50%) var(--y, 50%),
+        rgba(180, 120, 255, 0.28),
+        transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.glow-card:hover::before {
+    opacity: 1;
+}
+
+
