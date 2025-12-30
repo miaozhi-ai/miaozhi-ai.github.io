@@ -1,47 +1,131 @@
+/* ===== 基础重置 ===== */
+* {
+    box-sizing: border-box;
+}
 
-body {
+html, body {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    background: linear-gradient(to bottom, #0b1f3a, #09172c);
-    color: white;
+    padding: 0;
+}
+
+/* ===== 背景：柔和渐变紫 ===== */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #ffffff;
     text-align: center;
+    background: radial-gradient(
+            1200px 600px at 50% -200px,
+            rgba(180, 120, 255, 0.25),
+            transparent 60%
+        ),
+        linear-gradient(
+            180deg,
+            #2a145f 0%,
+            #1b0f3a 40%,
+            #120c2a 100%
+        );
+    min-height: 100vh;
 }
-header {
-    padding: 40px 20px 20px;
+
+/* ===== 头部 Hero ===== */
+.hero {
+    padding: 64px 20px 40px;
 }
+
 .logo {
-    width: 200px;
+    width: 160px;
     height: auto;
+    margin-bottom: 16px;
 }
+
 h1 {
-    margin: 10px 0 0;
-    font-size: 36px;
+    margin: 0;
+    font-size: clamp(28px, 6vw, 40px);
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
+
 h2 {
-    margin: 5px 0 30px;
-    font-size: 20px;
+    margin-top: 8px;
+    font-size: clamp(14px, 3.5vw, 18px);
     font-weight: 400;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.75);
 }
-section {
-    padding: 20px 30px;
-    max-width: 700px;
+
+/* ===== 信息区（玻璃质感，弱分层） ===== */
+.info {
+    max-width: 760px;
     margin: 0 auto;
+    padding: 32px 24px;
 }
+
+.glass {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.08),
+        rgba(255, 255, 255, 0.02)
+    );
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+/* ===== 标题与正文 ===== */
+h3 {
+    margin-top: 28px;
+    margin-bottom: 12px;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+p {
+    margin: 6px 0;
+    font-size: 15px;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+p.en {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+}
+
+/* ===== 链接 ===== */
 a {
-    color: #1e90ff;
+    color: #c9a9ff;
     text-decoration: none;
 }
+
 a:hover {
     text-decoration: underline;
 }
-footer {
-    margin-top: 40px;
-    padding: 20px;
-    font-size: 14px;
-    background-color: rgba(255, 255, 255, 0.05);
+
+/* ===== 页脚（自然融入背景） ===== */
+.footer {
+    margin-top: 60px;
+    padding: 24px 16px 40px;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.55);
 }
-.product img {
-    width: 120px;
-    margin-top: 10px;
+
+/* ===== 移动端优化 ===== */
+@media (max-width: 480px) {
+    .logo {
+        width: 120px;
+    }
+
+    .info {
+        padding: 24px 18px;
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    p {
+        font-size: 14px;
+    }
 }
