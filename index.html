@@ -7,6 +7,7 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <div class="page-bg"></div>
 
@@ -14,9 +15,66 @@
         <img src="images/logo_round.png" alt="妙至科技 Logo" class="logo">
         <h1>妙至科技</h1>
         <h2>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</h2>
+        <p class="slogan">
+            为日常生活打造可信赖的 AI 产品<br>
+            <span>Building thoughtful AI products for everyday life.</span>
+        </p>
     </header>
 
-    <section class="info glass">
+    <!-- ✅ 产品区：提前 -->
+    <section class="products">
+        <div class="products-inner">
+            <h3 class="section-title">我们的产品</h3>
+            <p class="section-desc">
+                我们专注于 AI 应用、工具类产品与智能体验设计，致力于打造<br>
+                简洁、可靠且具长期价值的软件产品。
+            </p>
+
+            <div class="product-grid">
+
+                <a class="product-card glow-card"
+                   href="https://apps.apple.com/cn/app/id1526914262"
+                   target="_blank"
+                   rel="noopener">
+                    <div class="product-icon">🤖</div>
+                    <h4>AI 应用</h4>
+                    <p>
+                        面向教育、效率与创作场景的 AI 应用，
+                        强调本地隐私、安全与长期可用性。
+                    </p>
+                </a>
+
+                <a class="product-card glow-card"
+                   href="https://apps.apple.com/cn/app/id6450956188"
+                   target="_blank"
+                   rel="noopener">
+                    <div class="product-icon">📱</div>
+                    <h4>移动工具</h4>
+                    <p>
+                        专注 iOS / 多平台的高质量工具类应用，
+                        简洁设计、极致体验。
+                    </p>
+                </a>
+
+                <a class="product-card glow-card"
+                   href="https://apps.apple.com/cn/developer/id1465440799"
+                   target="_blank"
+                   rel="noopener">
+                    <div class="product-icon">🧠</div>
+                    <h4>开发者主页</h4>
+                    <p>
+                        浏览我们在 App Store 上发布的全部产品，
+                        持续更新与长期维护。
+                    </p>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ 公司信息：放后面 -->
+    <section class="info">
+    <div class="info-inner glass">
         <h3>公司地址</h3>
         <p>中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号</p>
         <p class="en">
@@ -27,11 +85,32 @@
 
         <h3>联系方式</h3>
         <p>Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a></p>
+    </div>
     </section>
+
+
 
     <footer class="footer">
         <p>© 2025 成都妙至科技有限公司<br>
         CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</p>
     </footer>
+
+    <script>
+    document.querySelectorAll('.glow-card').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            card.style.setProperty('--x', x + 'px');
+            card.style.setProperty('--y', y + 'px');
+        });
+
+        card.addEventListener('mouseleave', () => {
+            card.style.removeProperty('--x');
+            card.style.removeProperty('--y');
+        });
+    });
+    </script>
 </body>
-</html>
+
+</html> 
