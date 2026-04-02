@@ -55,3 +55,4 @@ yieldlab.net, 6378054, RESELLER
 video.unrulymedia.com, 3169196794, Reseller
 sonobi.com, 0d53936254, RESELLER, d1a215d9eb5aee9e
 applovin.com, 6b8c9a0cc36f4f944632bc6e2b3754e8, DIRECT
+facebook.com, 716348458027153, DIRECT, c3e20eee3f780d68
