@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "33QFN62U3C.com.zero.app.gpsplus"
+        ],
+        "components": [
+          {
+            "/": "/mytracks/*"
+          }
+        ]
+      }
+    ]
+  }
+}
