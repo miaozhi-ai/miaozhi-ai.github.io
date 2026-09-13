@@ -3,48 +3,383 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Privacy Policy</title>
+
   <style>
+    /* =========================================================
+       Base
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Red Hat Text", Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
+      margin: 0;
+      padding: 0;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "SF Pro Display",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+      background: #f5f5f7;
+      color: #1d1d1f;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* =========================================================
+       Header
+    ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: 52px;
+
+      background: rgba(255, 255, 255, 0.82);
+
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      height: 100%;
+
+      margin: 0 auto;
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    /* =========================================================
+       Language Switch
+    ========================================================= */
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 3px;
+
+      background: #e9e9eb;
+      border-radius: 9px;
+    }
+
+    .language-switch button {
+      border: 0;
+      outline: none;
+
+      padding: 5px 12px;
+
+      border-radius: 7px;
+
+      background: transparent;
+
+      color: #6e6e73;
+
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .language-switch button.active {
+      background: #ffffff;
+      color: #1d1d1f;
+
+      box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .language-switch button:hover {
+      color: #1d1d1f;
+    }
+
+    /* =========================================================
+       Main
+    ========================================================= */
+
+    .container {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      padding: 72px 32px 100px;
+    }
+
+    /* =========================================================
+       Hero
+    ========================================================= */
+
+    .hero {
+      text-align: center;
+
+      margin-bottom: 64px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(38px, 7vw, 56px);
+      line-height: 1.08;
+
+      font-weight: 700;
+      letter-spacing: -1.8px;
+
+      color: #1d1d1f;
+    }
+
+    .updated {
+      margin-top: 16px;
+
+      font-size: 14px;
+      line-height: 1.5;
+
+      color: #86868b;
+    }
+
+    /* =========================================================
+       Introduction
+    ========================================================= */
+
+    .intro-card {
+      margin-bottom: 56px;
+
+      padding: 28px;
+
+      background: #ffffff;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .intro-card p {
+      margin: 0;
+
+      font-size: 17px;
+      line-height: 1.75;
+
+      color: #424245;
+    }
+
+    /* =========================================================
+       Sections
+    ========================================================= */
+
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section h2 {
+      margin: 0 0 18px;
+
+      font-size: 28px;
+      line-height: 1.2;
+
+      font-weight: 700;
+      letter-spacing: -0.6px;
+
+      color: #1d1d1f;
+    }
+
+    .section h3 {
+      margin: 28px 0 10px;
+
+      font-size: 19px;
+      line-height: 1.35;
+
+      font-weight: 600;
+
+      color: #1d1d1f;
+    }
+
+    .section p {
+      margin: 0 0 14px;
+
+      font-size: 16px;
+      line-height: 1.75;
+
+      color: #424245;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .section li {
+      margin: 0 0 12px;
+
+      font-size: 16px;
+      line-height: 1.7;
+
+      color: #424245;
+    }
+
+    .section li strong {
+      color: #1d1d1f;
+    }
+
+    /* =========================================================
+       Simple Information Box
+    ========================================================= */
+
+    .info-box {
+      margin-top: 24px;
+
+      padding: 22px 24px;
+
+      background: #ffffff;
+
+      border: 1px solid #e5e5e7;
+
+      border-radius: 16px;
+    }
+
+    .info-box p {
+      margin: 0 0 10px;
+
+      font-size: 15px;
+      line-height: 1.7;
+
+      color: #424245;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       Important Legal Notice
+    ========================================================= */
+
+    .legal-notice {
+      margin-top: 28px;
+
+      padding: 24px;
+
+      background: #f5f5f7;
+
+      border: 1px solid #e5e5e7;
+
+      border-radius: 16px;
+    }
+
+    .legal-notice-title {
+      margin-bottom: 14px;
+
+      font-size: 17px;
+      line-height: 1.4;
+
+      font-weight: 600;
+
+      color: #1d1d1f;
+    }
+
+    .legal-notice p {
+      margin: 0 0 12px;
+
+      font-size: 15px;
+      line-height: 1.7;
+
+      color: #424245;
+    }
+
+    .legal-notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-notice .emphasis {
+      color: #1d1d1f;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       Third Party Services
+    ========================================================= */
+
+    .service-list {
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .service-list li {
       margin: 0;
       padding: 0;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+    .service-list a {
+      display: block;
+
+      padding: 17px 18px;
+
+      background: #ffffff;
+
+      border: 1px solid #e5e5e7;
+
+      border-radius: 14px;
+
+      color: #0071e3;
+
+      font-size: 15px;
+      line-height: 1.4;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
-    h1, h2, h3 {
-      font-weight: 700;
-      color: #000;
+    .service-list a:hover {
+      background: #fafafa;
+
+      text-decoration: none;
+
+      transform: translateY(-1px);
     }
 
-    h1 {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    h2 {
-      margin-top: 20px;
-      font-size: 24px;
-    }
-
-    p, ul {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
+    /* =========================================================
+       Links
+    ========================================================= */
 
     a {
-      color: #1e3a8a;
+      color: #0071e3;
       text-decoration: none;
     }
 
@@ -52,251 +387,1303 @@
       text-decoration: underline;
     }
 
-    .section {
-      margin-bottom: 40px;
+    /* =========================================================
+       Footer
+    ========================================================= */
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 28px;
+
+      border-top: 1px solid #d2d2d7;
+
+      text-align: center;
     }
 
-    .english-content, .chinese-content {
+    .footer p {
+      margin: 0;
+
+      font-size: 13px;
+      line-height: 1.6;
+
+      color: #86868b;
+    }
+
+    /* =========================================================
+       Language Content
+    ========================================================= */
+
+    .english-content,
+    .chinese-content {
       display: none;
     }
 
-    .english-content.active, .chinese-content.active {
+    .english-content.active,
+    .chinese-content.active {
       display: block;
     }
 
-    .lang-toggle {
-      position: absolute;
-      top: 10px;
-      right: 30px;
-      font-size: 18px;
-      cursor: pointer;
-    }
+    /* =========================================================
+       Mobile
+    ========================================================= */
 
-    .lang-toggle img {
-      width: 30px;
-      margin-left: 10px;
-    }
+    @media (max-width: 600px) {
 
-    /* ✅ AI提示样式 */
-    .ai-note {
-      background: #f8fafc;
-      border-left: 4px solid #1e3a8a;
-      padding: 10px 12px;
-      font-size: 14px;
-      margin-top: 10px;
-      border-radius: 6px;
+      .site-header {
+        height: 50px;
+      }
+
+      .header-inner {
+        padding: 0 16px;
+      }
+
+      .container {
+        padding: 48px 20px 70px;
+      }
+
+      .hero {
+        margin-bottom: 48px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+        letter-spacing: -1.2px;
+      }
+
+      .updated {
+        font-size: 13px;
+      }
+
+      .intro-card {
+        padding: 22px;
+        margin-bottom: 44px;
+      }
+
+      .intro-card p {
+        font-size: 16px;
+      }
+
+      .section {
+        margin-bottom: 46px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .section h3 {
+        font-size: 18px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .info-box {
+        padding: 20px;
+      }
+
+      .legal-notice {
+        padding: 20px;
+      }
+
+      .legal-notice p {
+        font-size: 14px;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        margin-top: 60px;
+      }
     }
   </style>
 </head>
+
 <body>
-  <div class="container">
-    <div class="lang-toggle">
-      <a href="javascript:void(0);" onclick="toggleLang()">
-        <img id="flag" src="../images/china-flag.png" alt="Country Flag">
-      </a>
+
+  <!-- =======================================================
+       Header
+  ======================================================== -->
+
+  <header class="site-header">
+
+    <div class="header-inner">
+
+      <div class="language-switch">
+
+        <button
+          id="enButton"
+          class="active"
+          onclick="switchLang('en')">
+          English
+        </button>
+
+        <button
+          id="zhButton"
+          onclick="switchLang('zh')">
+          中文
+        </button>
+
+      </div>
+
     </div>
 
-    <!-- English -->
+  </header>
+
+
+  <main class="container">
+
+
+    <!-- =====================================================
+         English
+    ====================================================== -->
+
     <div class="english-content active">
-      <h1>Privacy Policy</h1>
-      <p><em>Last updated: April 2026</em></p>
 
-      <!-- ✅ 顶部AI提示 -->
-      <div class="ai-note">
-        AI-generated content may be inaccurate and is for reference only. It does not constitute professional advice.
+      <div class="hero">
+
+        <h1>Privacy Policy</h1>
+
+        <div class="updated">
+          Last updated: September 2026
+        </div>
+
       </div>
 
-      <div class="section">
+
+      <!-- Introduction -->
+
+      <div class="intro-card">
+
         <p>
-          This Privacy Policy applies to the mobile application published by <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong> 
-          This policy covers the version of the app distributed through <strong>Google Play Store</strong> 
-          and <strong>Apple App Store</strong>.
+          This Privacy Policy explains how
+          <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong>
+          ("we", "us", or "our") handles information in connection with
+          our mobile applications and related services.
         </p>
+
+        <p style="margin-top: 14px;">
+          This policy applies to applications distributed through
+          <strong>Apple App Store</strong>,
+          <strong>Google Play Store</strong>,
+          and other authorized distribution channels, where applicable.
+        </p>
+
       </div>
 
+
+      <!-- 1 -->
+
       <div class="section">
+
         <h2>1. Information We Collect</h2>
-        <ul>
-          <li><strong>Device Information:</strong> Device model, OS version, app performance data.</li>
-          <li><strong>Usage Information:</strong> Feature usage, interaction logs, crash reports.</li>
-          <li><strong>Location Data:</strong> Country and approximate location via IP.</li>
-          <li><strong>Advertising & Analytics Identifiers:</strong> Advertising ID and cookies from third-party SDKs.</li>
-        </ul>
-      </div>
 
-      <div class="section">
-        <h2>2. How We Use Your Data</h2>
-        <ul>
-          <li>Provide and improve app functionality</li>
-          <li>Analyze performance and usage trends</li>
-          <li>Deliver relevant ads (where permitted)</li>
-        </ul>
-      </div>
-
-      <!-- ✅ AI免责声明 -->
-      <div class="section">
-        <h2>3. AI-Generated Content Disclaimer</h2>
         <p>
-          This application may provide content generated by on-device artificial intelligence (AI) models.
-          Such content is automatically generated and may be inaccurate, incomplete, or outdated.
+          The information processed by an application may vary depending
+          on the features you use, your device settings, and the services
+          integrated into that application.
         </p>
-        <p>
-          The AI-generated content is provided for general informational purposes only and does not constitute
-          professional advice (such as medical, legal, financial, or other professional services).
-        </p>
-        <p>
-          Users should not rely solely on AI-generated content and are responsible for evaluating its accuracy
-          and appropriateness. We do not guarantee the correctness, reliability, or suitability of any generated content.
-        </p>
-        <p>
-          All AI processing is performed locally on the device and does not require uploading user data to external servers.
-        </p>
-      </div>
 
-      <div class="section">
-        <h2>4. Third-Party Services</h2>
         <ul>
-          <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a></li>
-          <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Analytics</a></li>
-          <li><a href="https://www.facebook.com/policy.php" target="_blank">Facebook Audience Network</a></li>
-          <li><a href="https://www.umeng.com/policy" target="_blank">Umeng Analytics</a></li>
+
+          <li>
+            <strong>Device Information:</strong>
+            Device model, operating system version, application version,
+            language, and certain technical or performance information.
+          </li>
+
+          <li>
+            <strong>Usage Information:</strong>
+            Information about how features are used, interactions with
+            the application, diagnostic information, and crash reports.
+          </li>
+
+          <li>
+            <strong>Location Information:</strong>
+            Certain applications may use device location information when
+            you enable location-based features, such as maps, navigation,
+            or GPS tracking. Location access is controlled through your
+            device permissions.
+          </li>
+
+          <li>
+            <strong>Approximate Location:</strong>
+            Certain third-party services may derive approximate location,
+            such as country or general region, from network information
+            such as IP address.
+          </li>
+
+          <li>
+            <strong>Advertising and Analytics Information:</strong>
+            Advertising identifiers, app-related identifiers, diagnostic
+            information, and similar technologies may be processed by
+            third-party advertising or analytics services.
+          </li>
+
         </ul>
+
+        <div class="info-box">
+
+          <p>
+            We do not require users to create an account or provide
+            personal information solely to use the basic functionality
+            of applications that do not include account-based services.
+          </p>
+
+          <p>
+            The specific information processed by each application may
+            differ according to its functionality and the third-party
+            services it uses.
+          </p>
+
+        </div>
+
       </div>
 
-      <div class="section">
-        <h2>5. Data Security</h2>
-        <p>We use reasonable safeguards to protect data, but no internet transmission is 100% secure.</p>
-      </div>
+
+      <!-- 2 -->
 
       <div class="section">
-        <h2>6. Your Choices</h2>
+
+        <h2>2. How We Use Information</h2>
+
+        <p>
+          We may use information for the following purposes, depending
+          on the features and services provided by the application:
+        </p>
+
         <ul>
-          <li>Reset advertising ID</li>
-          <li>Limit ad tracking</li>
-          <li>Disable analytics via device settings (where available)</li>
+
+          <li>
+            Provide, maintain, and improve application functionality.
+          </li>
+
+          <li>
+            Process requests and provide features requested by users.
+          </li>
+
+          <li>
+            Monitor application performance and reliability.
+          </li>
+
+          <li>
+            Diagnose crashes, errors, and technical problems.
+          </li>
+
+          <li>
+            Understand general usage trends and improve the user experience.
+          </li>
+
+          <li>
+            Display and measure advertising where advertising is included
+            and permitted by applicable law.
+          </li>
+
+          <li>
+            Detect, prevent, and address fraud, abuse, security issues,
+            or other activities that may harm our services.
+          </li>
+
+          <li>
+            Comply with applicable laws, regulations, and legal obligations.
+          </li>
+
         </ul>
+
       </div>
 
-      <div class="section">
-        <h2>7. Changes to This Policy</h2>
-        <p>We may update this Privacy Policy. Updates will be posted here with a new effective date.</p>
-      </div>
+
+      <!-- 3 Maps -->
 
       <div class="section">
-        <h2>8. Contact Us</h2>
-        <p><strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong><br>
-        Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br>
-        Address: No. 1916, 19F, Unit 1, Building 3, No. 500 Jiaozi Avenue, Chengdu High-tech Zone, China</p>
+
+        <h2>3. Maps &amp; Location Services</h2>
+
+        <p>
+          Some of our applications provide map display, location-based
+          features, GPS tracking, route recording, location markers,
+          distance or area measurements, or related functionality.
+        </p>
+
+        <p>
+          When you grant location permission, the application may access
+          location information to provide the requested functionality.
+          Depending on the feature, certain location data may be processed
+          locally on your device.
+        </p>
+
+        <p>
+          The use of a map or location-based feature does not by itself
+          mean that your precise location is transmitted to our servers.
+          However, third-party map, advertising, analytics, or other
+          service providers integrated into an application may process
+          information as necessary to provide their services.
+        </p>
+
+        <p>
+          You can control location access through your device's privacy
+          and location settings. Disabling location access may affect
+          features that require location information.
+        </p>
+
+
+        <!-- Important Notice -->
+
+        <div class="legal-notice">
+
+          <div class="legal-notice-title">
+            Important Notice
+          </div>
+
+          <p>
+            When using map-related functions, users should comply with
+            applicable laws and regulations, including laws and regulations
+            concerning surveying and mapping, national security, and the
+            protection of state secrets.
+          </p>
+
+          <p>
+            Activities involving map data may include, but are not limited
+            to, placing markers, drawing shapes, measuring distances or
+            areas, recording routes, importing or exporting geographic
+            data, and sharing location-related information.
+          </p>
+
+          <p class="emphasis">
+            Users should avoid collecting, processing, storing, sharing,
+            or transmitting information relating to military restricted
+            areas, military administrative areas, locations of national
+            security authorities, or other sensitive areas involving
+            state secrets.
+          </p>
+
+          <p class="emphasis">
+            Users are responsible for ensuring that their use, storage,
+            sharing, export, or transmission of map and location data
+            complies with applicable laws and regulations.
+          </p>
+
+        </div>
+
       </div>
+
+
+      <!-- 4 -->
+
+      <div class="section">
+
+        <h2>4. Health and Device Data</h2>
+
+        <p>
+          Some applications may provide health, fitness, wearable-device,
+          or sensor-related features.
+        </p>
+
+        <p>
+          Where an application requests access to health or fitness data,
+          such access is controlled through the relevant operating system
+          permissions and is used only to provide the corresponding
+          application functionality.
+        </p>
+
+        <p>
+          The availability and processing of health or fitness information
+          may vary between applications. Please review the permissions
+          presented by the application before granting access.
+        </p>
+
+      </div>
+
+
+      <!-- 5 -->
+
+      <div class="section">
+
+        <h2>5. Third-Party Services</h2>
+
+        <p>
+          Some applications may use third-party services for advertising,
+          analytics, crash reporting, maps, attribution, or other
+          functionality.
+        </p>
+
+        <p>
+          Depending on the application, these services may process
+          device information, usage information, identifiers, approximate
+          location, or other information necessary to provide their
+          respective services.
+        </p>
+
+        <ul class="service-list">
+
+          <li>
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener">
+              Google AdMob
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://firebase.google.com/support/privacy"
+              target="_blank"
+              rel="noopener">
+              Firebase
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.facebook.com/policy.php"
+              target="_blank"
+              rel="noopener">
+              Meta / Facebook
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.umeng.com/policy"
+              target="_blank"
+              rel="noopener">
+              Umeng
+            </a>
+          </li>
+
+        </ul>
+
+        <p style="margin-top: 20px;">
+          Third-party providers process information according to their
+          own privacy policies and terms. We recommend reviewing the
+          privacy policies of the relevant third-party services.
+        </p>
+
+      </div>
+
+
+      <!-- 6 -->
+
+      <div class="section">
+
+        <h2>6. Data Storage and Security</h2>
+
+        <p>
+          We take reasonable technical and organizational measures to
+          protect information against unauthorized access, disclosure,
+          alteration, or destruction.
+        </p>
+
+        <p>
+          Some information may be stored locally on your device, while
+          information processed by third-party services may be handled
+          on systems operated by those providers.
+        </p>
+
+        <p>
+          No method of electronic storage or transmission over the
+          Internet is completely secure. Therefore, we cannot guarantee
+          absolute security of information.
+        </p>
+
+      </div>
+
+
+      <!-- 7 -->
+
+      <div class="section">
+
+        <h2>7. Data Retention</h2>
+
+        <p>
+          We retain information only for as long as reasonably necessary
+          for the purposes described in this Privacy Policy, including
+          providing services, maintaining application functionality,
+          resolving disputes, enforcing agreements, and complying with
+          legal obligations.
+        </p>
+
+        <p>
+          Information stored or processed by third-party service providers
+          may be retained according to their respective policies and
+          applicable legal requirements.
+        </p>
+
+      </div>
+
+
+      <!-- 8 -->
+
+      <div class="section">
+
+        <h2>8. Your Choices and Rights</h2>
+
+        <p>
+          Depending on your device, location, and applicable law, you may
+          have certain choices or rights regarding information processed
+          through our applications.
+        </p>
+
+        <ul>
+
+          <li>
+            Manage application permissions through your device settings.
+          </li>
+
+          <li>
+            Enable or disable location access.
+          </li>
+
+          <li>
+            Reset or limit use of advertising identifiers where supported.
+          </li>
+
+          <li>
+            Manage advertising and tracking preferences through your
+            device settings.
+          </li>
+
+          <li>
+            Disable certain analytics or related permissions where
+            supported by the operating system or application.
+          </li>
+
+        </ul>
+
+        <p>
+          Depending on applicable law, you may also have rights to request
+          access to, correction of, deletion of, or other control over
+          certain personal information.
+        </p>
+
+        <p>
+          To make a privacy-related request, please contact us using the
+          information provided below. We may need to verify your request
+          before taking action.
+        </p>
+
+      </div>
+
+
+      <!-- 9 -->
+
+      <div class="section">
+
+        <h2>9. Children's Privacy</h2>
+
+        <p>
+          Our applications are not intended to knowingly collect personal
+          information from children in violation of applicable laws.
+        </p>
+
+        <p>
+          If you believe that a child has provided personal information
+          to us in a manner that is not permitted by applicable law,
+          please contact us so that we can review the situation and take
+          appropriate action.
+        </p>
+
+      </div>
+
+
+      <!-- 10 -->
+
+      <div class="section">
+
+        <h2>10. International Data Processing</h2>
+
+        <p>
+          Depending on the application and the third-party services used,
+          information may be processed or stored in countries or regions
+          outside your country of residence.
+        </p>
+
+        <p>
+          Where required by applicable law, appropriate safeguards will
+          be applied to international transfers or other cross-border
+          processing of personal information.
+        </p>
+
+      </div>
+
+
+      <!-- 11 -->
+
+      <div class="section">
+
+        <h2>11. Third-Party Links and Services</h2>
+
+        <p>
+          Our applications may contain links to third-party websites,
+          services, or applications.
+        </p>
+
+        <p>
+          We are not responsible for the privacy practices, content,
+          security, or policies of third-party services that we do not
+          control. We recommend reviewing the privacy policy of any
+          third-party service before providing information to it.
+        </p>
+
+      </div>
+
+
+      <!-- 12 -->
+
+      <div class="section">
+
+        <h2>12. Changes to This Privacy Policy</h2>
+
+        <p>
+          We may update this Privacy Policy from time to time to reflect
+          changes to our applications, services, legal requirements, or
+          privacy practices.
+        </p>
+
+        <p>
+          When we make changes, we will update the "Last updated" date
+          shown at the beginning of this Privacy Policy. We encourage
+          users to review this page periodically.
+        </p>
+
+      </div>
+
+
+      <!-- 13 -->
+
+      <div class="section">
+
+        <h2>13. Contact Us</h2>
+
+        <p>
+          If you have questions, concerns, or requests regarding this
+          Privacy Policy or our privacy practices, please contact us:
+        </p>
+
+        <p>
+          <strong>
+            CHENGDU MIAOZHI TECHNOLOGY CO., LTD.
+          </strong>
+        </p>
+
+        <p>
+          Email:
+          <a href="mailto:miaozhi.ai@gmail.com">
+            miaozhi.ai@gmail.com
+          </a>
+        </p>
+
+        <p>
+          Address:
+          No. 1916, 19F, Unit 1, Building 3,
+          No. 500 Jiaozi Avenue,
+          Chengdu High-tech Zone, China
+        </p>
+
+      </div>
+
+
+      <div class="footer">
+
+        <p>
+          © 2026 CHENGDU MIAOZHI TECHNOLOGY CO., LTD.
+          All rights reserved.
+        </p>
+
+      </div>
+
     </div>
 
-    <!-- 中文 -->
+
+    <!-- =====================================================
+         Chinese
+    ====================================================== -->
+
     <div class="chinese-content">
-      <h1>隐私政策</h1>
-      <p><em>最后更新：2026年4月</em></p>
 
-      <!-- ✅ 顶部AI提示 -->
-      <div class="ai-note">
-        AI生成内容可能存在误差，仅供参考，不构成任何专业建议。
+      <div class="hero">
+
+        <h1>隐私政策</h1>
+
+        <div class="updated">
+          最后更新：2026年9月
+        </div>
+
       </div>
 
-      <div class="section">
+
+      <!-- Introduction -->
+
+      <div class="intro-card">
+
         <p>
-          本隐私政策适用于由 <strong>成都妙至科技有限公司</strong> 发布的移动应用。本政策适用于在 
-          <strong>Google Play 商店</strong> 和 <strong>Apple App Store</strong> 发布的版本。
+          本隐私政策说明
+          <strong>成都妙至科技有限公司</strong>
+          （以下简称“我们”）在提供移动应用及相关服务过程中，
+          如何处理与用户相关的信息。
         </p>
+
+        <p style="margin-top: 14px;">
+          本政策适用于通过
+          <strong>Apple App Store</strong>、
+          <strong>Google Play 商店</strong>
+          以及其他经授权的分发渠道发布的相关应用，
+          具体以各应用实际提供的功能和服务为准。
+        </p>
+
       </div>
 
+
+      <!-- 1 -->
+
       <div class="section">
+
         <h2>1. 我们收集的信息</h2>
+
+        <p>
+          根据您使用的具体功能、设备设置以及应用所集成的第三方服务，
+          不同应用实际处理的信息可能有所不同。
+        </p>
+
         <ul>
-          <li>设备信息：设备型号、系统版本、性能数据</li>
-          <li>使用信息：功能使用情况、交互记录、崩溃日志</li>
-          <li>位置信息：基于IP的国家和大致区域</li>
-          <li>广告与分析标识符：来自第三方SDK的广告ID和Cookies</li>
+
+          <li>
+            <strong>设备信息：</strong>
+            设备型号、操作系统版本、应用版本、系统语言以及
+            某些技术或性能相关信息。
+          </li>
+
+          <li>
+            <strong>使用信息：</strong>
+            功能使用情况、与应用的交互情况、诊断信息以及崩溃日志等。
+          </li>
+
+          <li>
+            <strong>位置信息：</strong>
+            部分应用在您启用相关功能后，可能使用设备位置信息，
+            例如地图、导航或 GPS 轨迹记录等功能。
+            位置信息访问权限由您的设备系统控制。
+          </li>
+
+          <li>
+            <strong>大致位置信息：</strong>
+            某些第三方服务可能根据 IP 地址等网络信息推断国家、
+            地区等大致位置信息。
+          </li>
+
+          <li>
+            <strong>广告及分析信息：</strong>
+            在应用包含相关服务的情况下，第三方广告或分析服务
+            可能处理广告标识符、应用相关标识符、诊断信息以及
+            类似技术产生的信息。
+          </li>
+
         </ul>
+
+        <div class="info-box">
+
+          <p>
+            对于不包含账户服务的应用，我们通常不会要求用户创建账户，
+            也不会仅为了使用应用的基本功能而要求用户提供个人信息。
+          </p>
+
+          <p>
+            每个应用实际处理的信息可能因其具体功能以及所使用的
+            第三方服务而有所不同。
+          </p>
+
+        </div>
+
       </div>
 
+
+      <!-- 2 -->
+
       <div class="section">
+
         <h2>2. 信息使用方式</h2>
+
+        <p>
+          根据应用所提供的功能和服务，我们可能将相关信息用于：
+        </p>
+
         <ul>
-          <li>提供和改进应用功能</li>
-          <li>分析性能和使用趋势</li>
-          <li>在合法前提下提供相关广告</li>
+
+          <li>
+            提供、维护和改进应用功能。
+          </li>
+
+          <li>
+            处理用户请求并提供用户主动使用的相关功能。
+          </li>
+
+          <li>
+            监测应用运行情况和稳定性。
+          </li>
+
+          <li>
+            诊断崩溃、错误及其他技术问题。
+          </li>
+
+          <li>
+            了解整体使用趋势并改善用户体验。
+          </li>
+
+          <li>
+            在应用包含广告且法律允许的情况下，
+            展示、衡量和优化相关广告。
+          </li>
+
+          <li>
+            检测、防止和处理欺诈、滥用、安全问题或其他
+            可能损害应用及服务的行为。
+          </li>
+
+          <li>
+            遵守适用的法律法规及相关法律义务。
+          </li>
+
         </ul>
+
       </div>
 
-      <!-- ✅ AI免责声明 -->
-      <div class="section">
-        <h2>3. AI生成内容免责声明</h2>
-        <p>
-          本应用可能提供由设备端人工智能（AI）模型生成的内容。该类内容为自动生成，可能存在不准确、不完整或过时的情况。
-        </p>
-        <p>
-          AI生成内容仅供一般信息参考之用，不构成任何专业建议（包括但不限于医疗、法律、金融等领域）。
-        </p>
-        <p>
-          用户不应仅依赖AI生成内容，并需自行判断其准确性和适用性。对于任何生成内容的正确性、可靠性或适用性，我们不作任何保证。
-        </p>
-        <p>
-          所有AI处理均在设备本地完成，无需将用户数据上传至外部服务器。
-        </p>
-      </div>
+
+      <!-- 3 Maps -->
 
       <div class="section">
-        <h2>4. 第三方服务</h2>
+
+        <h2>3. 地图与位置信息服务</h2>
+
+        <p>
+          部分应用可能提供地图展示、基于位置的功能、GPS 轨迹记录、
+          路线记录、位置标记、距离或面积测量以及其他相关功能。
+        </p>
+
+        <p>
+          当您授予应用位置访问权限后，应用可能访问设备位置信息，
+          以提供您主动使用的相关功能。根据具体功能，
+          部分位置信息可能在您的设备本地进行处理。
+        </p>
+
+        <p>
+          使用地图或基于位置的功能本身，并不意味着您的精确位置
+          一定会被传输至我们的服务器。但是，应用所集成的第三方
+          地图、广告、分析或其他服务提供商，可能为提供其服务而
+          按照其自身政策处理必要的信息。
+        </p>
+
+        <p>
+          您可以通过设备的隐私和位置设置管理位置访问权限。
+          关闭位置权限可能导致部分依赖位置信息的功能无法正常使用。
+        </p>
+
+
+        <!-- Important Notice -->
+
+        <div class="legal-notice">
+
+          <div class="legal-notice-title">
+            重要提示
+          </div>
+
+          <p>
+            在使用地图相关功能时，用户应遵守适用的法律法规，
+            包括与测绘、国家安全以及国家秘密保护等相关的法律法规。
+          </p>
+
+          <p>
+            地图数据相关行为包括但不限于打点、绘制图形、
+            测量距离或面积、记录轨迹、导入或导出地理数据，
+            以及分享与位置相关的信息。
+          </p>
+
+          <p class="emphasis">
+            用户应主动避免收集、处理、保存、分享或传递涉及军事禁区、
+            军事管理区、国家安全要害部门所在地，以及其他涉及国家秘密
+            的敏感区域的数据。
+          </p>
+
+          <p class="emphasis">
+            用户对地图和位置数据的使用、保存、分享、导出或传递，
+            应自行确保符合适用的法律法规。
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- 4 -->
+
+      <div class="section">
+
+        <h2>4. 健康及设备数据</h2>
+
+        <p>
+          部分应用可能提供健康、健身、可穿戴设备或设备传感器
+          相关功能。
+        </p>
+
+        <p>
+          如果应用请求访问健康或健身数据，相关访问权限由相应
+          操作系统的权限机制进行控制，并用于提供对应的应用功能。
+        </p>
+
+        <p>
+          健康或健身数据的具体类型及处理方式可能因不同应用而有所不同。
+          在授予相关权限之前，请查看应用向您展示的权限说明。
+        </p>
+
+      </div>
+
+
+      <!-- 5 -->
+
+      <div class="section">
+
+        <h2>5. 第三方服务</h2>
+
+        <p>
+          部分应用可能使用第三方服务，用于广告展示、数据分析、
+          崩溃报告、地图、归因或其他应用功能。
+        </p>
+
+        <p>
+          根据具体应用及其集成的第三方服务，这些服务可能处理
+          设备信息、使用信息、标识符、大致位置信息或提供其服务
+          所必需的其他信息。
+        </p>
+
+        <ul class="service-list">
+
+          <li>
+            <a
+              href="https://policies.google.com/privacy"
+              target="_blank"
+              rel="noopener">
+              Google AdMob
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://firebase.google.com/support/privacy"
+              target="_blank"
+              rel="noopener">
+              Firebase
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.facebook.com/policy.php"
+              target="_blank"
+              rel="noopener">
+              Meta / Facebook
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://www.umeng.com/policy"
+              target="_blank"
+              rel="noopener">
+              友盟
+            </a>
+          </li>
+
+        </ul>
+
+        <p style="margin-top: 20px;">
+          第三方服务提供商会根据其自身的隐私政策和服务条款处理
+          相关信息。我们建议您在使用相关第三方服务前查看其隐私政策。
+        </p>
+
+      </div>
+
+
+      <!-- 6 -->
+
+      <div class="section">
+
+        <h2>6. 数据存储与安全</h2>
+
+        <p>
+          我们采取合理的技术和组织措施，保护相关信息免遭未经授权的
+          访问、披露、修改或破坏。
+        </p>
+
+        <p>
+          部分信息可能存储在您的设备本地；由第三方服务处理的信息，
+          则可能由相关第三方在其运营的系统中进行处理。
+        </p>
+
+        <p>
+          任何电子存储方式或互联网传输方式都无法保证绝对安全。
+          因此，我们无法保证信息在任何情况下均绝对安全。
+        </p>
+
+      </div>
+
+
+      <!-- 7 -->
+
+      <div class="section">
+
+        <h2>7. 数据保留</h2>
+
+        <p>
+          我们仅在实现本隐私政策所述目的所合理必要的期限内保留相关信息，
+          包括提供服务、维护应用功能、解决争议、履行相关协议以及
+          遵守法律义务等。
+        </p>
+
+        <p>
+          第三方服务提供商处理的信息，可能按照其自身隐私政策、
+          数据保留规则以及适用法律法规进行保存。
+        </p>
+
+      </div>
+
+
+      <!-- 8 -->
+
+      <div class="section">
+
+        <h2>8. 您的选择与权利</h2>
+
+        <p>
+          根据您所在地区、所使用的设备以及适用的法律法规，
+          您可能对相关信息享有一定的控制权和隐私权利。
+        </p>
+
         <ul>
-          <li><a href="https://policies.google.com/privacy" target="_blank">Google AdMob</a></li>
-          <li><a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Analytics</a></li>
-          <li><a href="https://www.facebook.com/policy.php" target="_blank">Facebook Audience Network</a></li>
-          <li><a href="https://www.umeng.com/policy" target="_blank">友盟统计</a></li>
+
+          <li>
+            通过设备设置管理应用权限。
+          </li>
+
+          <li>
+            开启或关闭位置访问权限。
+          </li>
+
+          <li>
+            在系统支持的情况下重置或限制广告标识符的使用。
+          </li>
+
+          <li>
+            通过设备设置管理广告及跟踪相关选项。
+          </li>
+
+          <li>
+            在操作系统或应用支持的情况下关闭部分分析功能。
+          </li>
+
         </ul>
+
+        <p>
+          根据适用法律法规，您还可能有权请求访问、更正、删除或以其他
+          方式控制与您相关的部分个人信息。
+        </p>
+
+        <p>
+          如需提出隐私相关请求，请通过下方联系方式与我们联系。
+          在处理相关请求之前，我们可能需要对您的请求进行必要的验证。
+        </p>
+
       </div>
 
-      <div class="section">
-        <h2>5. 数据安全</h2>
-        <p>我们采取合理措施保护数据，但互联网传输无法保证绝对安全。</p>
-      </div>
+
+      <!-- 9 -->
 
       <div class="section">
-        <h2>6. 您的选择</h2>
-        <ul>
-          <li>重置广告ID</li>
-          <li>限制广告跟踪</li>
-          <li>通过设备设置关闭分析（如支持）</li>
-        </ul>
+
+        <h2>9. 儿童隐私</h2>
+
+        <p>
+          我们不会明知地以违反适用法律法规的方式收集儿童的个人信息。
+        </p>
+
+        <p>
+          如果您认为儿童以不符合适用法律法规的方式向我们提供了个人信息，
+          请联系我们，以便我们进行核查并采取适当措施。
+        </p>
+
       </div>
 
-      <div class="section">
-        <h2>7. 政策变更</h2>
-        <p>政策更新将发布在本页面并标注新的生效日期。</p>
-      </div>
+
+      <!-- 10 -->
 
       <div class="section">
-        <h2>8. 联系我们</h2>
-        <p><strong>成都妙至科技有限公司</strong><br>
-        邮箱：miaozhi.ai@gmail.com<br>
-        地址：中国（四川）自由贸易试验区成都高新区交子大道500号</p>
+
+        <h2>10. 跨境数据处理</h2>
+
+        <p>
+          根据具体应用及其所使用的第三方服务，相关信息可能在您所在
+          国家或地区以外的其他国家或地区进行处理或存储。
+        </p>
+
+        <p>
+          在适用法律法规要求的情况下，我们将针对个人信息的跨境传输
+          或其他跨境处理采取相应的保护措施。
+        </p>
+
       </div>
+
+
+      <!-- 11 -->
+
+      <div class="section">
+
+        <h2>11. 第三方链接与服务</h2>
+
+        <p>
+          我们的应用可能包含指向第三方网站、服务或应用的链接。
+        </p>
+
+        <p>
+          对于我们无法控制的第三方服务，我们不对其隐私实践、
+          内容、安全性或相关政策负责。
+          在向第三方服务提供信息之前，我们建议您查看其隐私政策。
+        </p>
+
+      </div>
+
+
+      <!-- 12 -->
+
+      <div class="section">
+
+        <h2>12. 隐私政策的变更</h2>
+
+        <p>
+          我们可能根据应用功能、服务、法律法规或隐私实践的变化，
+          不时更新本隐私政策。
+        </p>
+
+        <p>
+          当我们进行更新时，将修改本政策顶部的“最后更新”日期。
+          我们建议您定期查看本页面，以了解最新的隐私政策内容。
+        </p>
+
+      </div>
+
+
+      <!-- 13 -->
+
+      <div class="section">
+
+        <h2>13. 联系我们</h2>
+
+        <p>
+          如果您对本隐私政策或我们的隐私实践有任何问题、
+          意见或请求，请通过以下方式联系我们：
+        </p>
+
+        <p>
+          <strong>
+            成都妙至科技有限公司
+          </strong>
+        </p>
+
+        <p>
+          邮箱：
+          <a href="mailto:miaozhi.ai@gmail.com">
+            miaozhi.ai@gmail.com
+          </a>
+        </p>
+
+        <p>
+          地址：中国（四川）自由贸易试验区成都高新区交子大道500号
+        </p>
+
+      </div>
+
+
+      <div class="footer">
+
+        <p>
+          © 2026 成都妙至科技有限公司 版权所有
+        </p>
+
+      </div>
+
     </div>
-  </div>
+
+  </main>
+
+
+  <!-- =======================================================
+       JavaScript
+  ======================================================== -->
 
   <script>
-    function toggleLang() {
-      const currentLang = localStorage.getItem('language') || 'en';
-      switchLang(currentLang === 'en' ? 'zh' : 'en');
-    }
 
     function switchLang(lang) {
-      document.querySelector('.english-content').classList.toggle('active', lang === 'en');
-      document.querySelector('.chinese-content').classList.toggle('active', lang === 'zh');
-      document.getElementById('flag').src = lang === 'en' ? '../images/usa-flag.png' : '../images/china-flag.png';
-      localStorage.setItem('language', lang);
+
+      const english =
+        document.querySelector(".english-content");
+
+      const chinese =
+        document.querySelector(".chinese-content");
+
+      const enButton =
+        document.getElementById("enButton");
+
+      const zhButton =
+        document.getElementById("zhButton");
+
+
+      if (lang === "zh") {
+
+        english.classList.remove("active");
+        chinese.classList.add("active");
+
+        enButton.classList.remove("active");
+        zhButton.classList.add("active");
+
+        document.documentElement.lang = "zh-CN";
+
+        localStorage.setItem("language", "zh");
+
+      } else {
+
+        chinese.classList.remove("active");
+        english.classList.add("active");
+
+        zhButton.classList.remove("active");
+        enButton.classList.add("active");
+
+        document.documentElement.lang = "en";
+
+        localStorage.setItem("language", "en");
+
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
 
-    window.onload = function() {
-      switchLang(localStorage.getItem('language') || 'en');
-    }
+
+    window.addEventListener("DOMContentLoaded", function () {
+
+      const savedLanguage =
+        localStorage.getItem("language") || "en";
+
+      switchLang(savedLanguage);
+
+    });
+
   </script>
+
 </body>
 </html>
