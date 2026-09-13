@@ -3,49 +3,384 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Children's Addiction Prevention Policy</title>
+
+  <title>Children's Healthy Use Policy</title>
 
   <style>
+
+    /* =========================================================
+       Base
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Red Hat Text", Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
+      margin: 0;
+      padding: 0;
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Text",
+        "SF Pro Display",
+        "Helvetica Neue",
+        Arial,
+        sans-serif;
+
+      background: #f5f5f7;
+      color: #1d1d1f;
+
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    /* =========================================================
+       Header
+    ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: 52px;
+
+      background: rgba(255, 255, 255, 0.82);
+
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      height: 100%;
+
+      margin: 0 auto;
+      padding: 0 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    /* =========================================================
+       Language Switch
+    ========================================================= */
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+
+      padding: 3px;
+
+      background: #e9e9eb;
+      border-radius: 9px;
+    }
+
+    .language-switch button {
+      border: 0;
+      outline: none;
+
+      padding: 5px 12px;
+
+      border-radius: 7px;
+
+      background: transparent;
+
+      color: #6e6e73;
+
+      font-family: inherit;
+      font-size: 12px;
+      font-weight: 500;
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        box-shadow 0.2s ease;
+    }
+
+    .language-switch button.active {
+      background: #ffffff;
+      color: #1d1d1f;
+
+      box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .language-switch button:hover {
+      color: #1d1d1f;
+    }
+
+    /* =========================================================
+       Main
+    ========================================================= */
+
+    .container {
+      max-width: 900px;
+
+      margin: 0 auto;
+
+      padding: 72px 32px 100px;
+    }
+
+    /* =========================================================
+       Hero
+    ========================================================= */
+
+    .hero {
+      text-align: center;
+
+      margin-bottom: 64px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(38px, 7vw, 56px);
+      line-height: 1.08;
+
+      font-weight: 700;
+      letter-spacing: -1.8px;
+
+      color: #1d1d1f;
+    }
+
+    .updated {
+      margin-top: 16px;
+
+      font-size: 14px;
+      line-height: 1.5;
+
+      color: #86868b;
+    }
+
+    /* =========================================================
+       Introduction
+    ========================================================= */
+
+    .intro-card {
+      margin-bottom: 56px;
+
+      padding: 28px;
+
+      background: #ffffff;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.04),
+        0 8px 30px rgba(0, 0, 0, 0.04);
+    }
+
+    .intro-card p {
+      margin: 0;
+
+      font-size: 17px;
+      line-height: 1.75;
+
+      color: #424245;
+    }
+
+    /* =========================================================
+       Sections
+    ========================================================= */
+
+    .section {
+      margin-bottom: 56px;
+    }
+
+    .section h2 {
+      margin: 0 0 18px;
+
+      font-size: 28px;
+      line-height: 1.2;
+
+      font-weight: 700;
+      letter-spacing: -0.6px;
+
+      color: #1d1d1f;
+    }
+
+    .section h3 {
+      margin: 28px 0 10px;
+
+      font-size: 19px;
+      line-height: 1.35;
+
+      font-weight: 600;
+
+      color: #1d1d1f;
+    }
+
+    .section p {
+      margin: 0 0 14px;
+
+      font-size: 16px;
+      line-height: 1.75;
+
+      color: #424245;
+    }
+
+    .section ul {
+      margin: 0;
+      padding-left: 24px;
+    }
+
+    .section li {
+      margin: 0 0 12px;
+
+      font-size: 16px;
+      line-height: 1.7;
+
+      color: #424245;
+    }
+
+    .section li strong {
+      color: #1d1d1f;
+    }
+
+    /* =========================================================
+       Simple Information Box
+    ========================================================= */
+
+    .info-box {
+      margin-top: 24px;
+
+      padding: 22px 24px;
+
+      background: #ffffff;
+
+      border: 1px solid #e5e5e7;
+
+      border-radius: 16px;
+    }
+
+    .info-box p {
+      margin: 0 0 10px;
+
+      font-size: 15px;
+      line-height: 1.7;
+
+      color: #424245;
+    }
+
+    .info-box p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       Important Legal Notice
+    ========================================================= */
+
+    .legal-notice {
+      margin-top: 28px;
+
+      padding: 24px;
+
+      background: #f5f5f7;
+
+      border: 1px solid #e5e5e7;
+
+      border-radius: 16px;
+    }
+
+    .legal-notice-title {
+      margin-bottom: 14px;
+
+      font-size: 17px;
+      line-height: 1.4;
+
+      font-weight: 600;
+
+      color: #1d1d1f;
+    }
+
+    .legal-notice p {
+      margin: 0 0 12px;
+
+      font-size: 15px;
+      line-height: 1.7;
+
+      color: #424245;
+    }
+
+    .legal-notice p:last-child {
+      margin-bottom: 0;
+    }
+
+    .legal-notice .emphasis {
+      color: #1d1d1f;
+      font-weight: 500;
+    }
+
+    /* =========================================================
+       Third Party Services
+    ========================================================= */
+
+    .service-list {
+      display: grid;
+
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      gap: 12px;
+
+      padding: 0;
+
+      list-style: none;
+    }
+
+    .service-list li {
       margin: 0;
       padding: 0;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+    .service-list a {
+      display: block;
+
+      padding: 17px 18px;
+
+      background: #ffffff;
+
+      border: 1px solid #e5e5e7;
+
+      border-radius: 14px;
+
+      color: #0071e3;
+
+      font-size: 15px;
+      line-height: 1.4;
+
+      transition:
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
-    h1, h2, h3 {
-      font-weight: 700;
-      color: #000;
+    .service-list a:hover {
+      background: #fafafa;
+
+      text-decoration: none;
+
+      transform: translateY(-1px);
     }
 
-    h1 {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    h2 {
-      margin-top: 24px;
-      font-size: 24px;
-    }
-
-    p, ul {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
+    /* =========================================================
+       Links
+    ========================================================= */
 
     a {
-      color: #1e3a8a;
+      color: #0071e3;
       text-decoration: none;
     }
 
@@ -53,20 +388,31 @@
       text-decoration: underline;
     }
 
-    .section {
-      margin-bottom: 40px;
+    /* =========================================================
+       Footer
+    ========================================================= */
+
+    .footer {
+      margin-top: 80px;
+      padding-top: 28px;
+
+      border-top: 1px solid #d2d2d7;
+
+      text-align: center;
     }
 
-    .lang-toggle {
-      position: absolute;
-      top: 10px;
-      right: 30px;
-      cursor: pointer;
+    .footer p {
+      margin: 0;
+
+      font-size: 13px;
+      line-height: 1.6;
+
+      color: #86868b;
     }
 
-    .lang-toggle img {
-      width: 30px;
-    }
+    /* =========================================================
+       Language Content
+    ========================================================= */
 
     .english-content,
     .chinese-content {
@@ -78,204 +424,814 @@
       display: block;
     }
 
-    hr {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #ddd;
+    /* =========================================================
+       Mobile
+    ========================================================= */
+
+    @media (max-width: 600px) {
+
+      .site-header {
+        height: 50px;
+      }
+
+      .header-inner {
+        padding: 0 16px;
+      }
+
+      .container {
+        padding: 48px 20px 70px;
+      }
+
+      .hero {
+        margin-bottom: 48px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+        letter-spacing: -1.2px;
+      }
+
+      .updated {
+        font-size: 13px;
+      }
+
+      .intro-card {
+        padding: 22px;
+        margin-bottom: 44px;
+      }
+
+      .intro-card p {
+        font-size: 16px;
+      }
+
+      .section {
+        margin-bottom: 46px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+      }
+
+      .section h3 {
+        font-size: 18px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .info-box {
+        padding: 20px;
+      }
+
+      .legal-notice {
+        padding: 20px;
+      }
+
+      .legal-notice p {
+        font-size: 14px;
+      }
+
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .footer {
+        margin-top: 60px;
+      }
     }
+  
+    .document-header { text-align:center; padding:0 0 64px; }
+    .last-updated { margin-top:16px; font-size:14px; line-height:1.5; color:#86868b; }
+    .intro { margin-bottom:56px; padding:28px; background:#fff; border-radius:18px; box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 30px rgba(0,0,0,.04); }
+    .intro p { margin:0; font-size:17px; line-height:1.75; color:#424245; }
+    .section { margin-bottom:56px; padding:0; background:transparent; border:0; border-radius:0; box-shadow:none; }
+    .section h2 { margin:0 0 18px; font-size:28px; line-height:1.2; font-weight:700; letter-spacing:-.6px; color:#1d1d1f; }
+    .section p { margin:0 0 14px; font-size:16px; line-height:1.75; color:#424245; }
+    .section ul { margin:0; padding-left:24px; }
+    .section li { margin:0 0 12px; padding-left:0; font-size:16px; line-height:1.7; color:#424245; }
+    .notice { margin-top:28px; padding:24px; background:#f5f5f7; border:1px solid #e5e5e7; border-radius:16px; }
+    .notice-title { margin-bottom:14px; font-size:17px; line-height:1.4; font-weight:600; color:#1d1d1f; }
+    .notice p { margin:0 0 12px; font-size:15px; line-height:1.7; color:#424245; }
+    .contact-card { margin-top:0; padding:0; background:transparent; border:0; border-radius:0; box-shadow:none; }
+    .contact-card h2 { margin:0 0 18px; font-size:28px; line-height:1.2; font-weight:700; letter-spacing:-.6px; color:#1d1d1f; }
+    .contact-card p { margin:0 0 14px; font-size:16px; line-height:1.75; color:#424245; }
+    .footer { margin-top:80px; padding-top:28px; border-top:1px solid #d2d2d7; text-align:center; }
+    .footer-divider { display:none; }
+    .footer p { margin:0; font-size:13px; line-height:1.6; color:#86868b; }
+    .footer-links { margin-top:14px; font-size:13px; }
+    .english-content,.chinese-content { display:none; }
+    .english-content.active,.chinese-content.active { display:block; }
+    @media (max-width:600px) {
+      .container { padding:48px 20px 70px; }
+      .document-header { padding:0 0 48px; }
+      .last-updated { font-size:13px; }
+      .intro { padding:22px; margin-bottom:44px; }
+      .intro p { font-size:16px; }
+      .section { margin-bottom:46px; }
+      .section h2,.contact-card h2 { font-size:24px; margin-bottom:15px; }
+      .section p,.section li,.contact-card p { font-size:15px; line-height:1.75; }
+      .notice { padding:20px; }
+      .notice p { font-size:14px; }
+      .footer { margin-top:60px; }
+    }
+
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="lang-toggle">
-      <a href="javascript:void(0);" onclick="toggleLang()">
-        <img id="flag" src="../images/china-flag.png" alt="Country Flag">
-      </a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="language-switch">
+        <button id="enButton" class="active" onclick="switchLang('en')">English</button>
+        <button id="zhButton" onclick="switchLang('zh')">中文</button>
+      </div>
     </div>
+  </header>
 
-    <!-- ================= ENGLISH ================= -->
+  <div class="container">
+
+    <!-- =====================================================
+         ENGLISH
+         ===================================================== -->
+
     <div class="english-content active">
-      <h1>Children's Addiction Prevention Policy</h1>
-      <p style="text-align:center;"><em>Last updated: July 10, 2025</em></p>
 
-      <div class="section">
-        <p>
-          At <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong> (“we”, “us”, or “our”),
-          we are committed to ensuring that our applications are safe and suitable
-          for children. This Children's Addiction Prevention Policy explains how
-          we address excessive usage and promote healthy digital habits.
+      <header class="document-header">
+<h1>Children's Healthy Use Policy</h1>
+
+        <p class="last-updated">
+          Last updated: September 2026
         </p>
+
+      </header>
+
+
+      <div class="intro">
+
+        <p>
+          <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong>
+          (“we”, “us”, or “our”) is committed to promoting safe,
+          responsible, and healthy use of our applications. This
+          Children's Healthy Use Policy describes the measures and
+          principles we follow to help reduce excessive use and
+          encourage appropriate digital habits.
+        </p>
+
       </div>
 
-      <div class="section">
-        <h2>1. Promoting Healthy Usage</h2>
-        <p>
-          We encourage balanced and healthy use of our applications. Our products
-          are designed to provide positive, educational, and entertaining
-          experiences without encouraging excessive or prolonged usage.
-        </p>
-      </div>
 
       <div class="section">
-        <h2>2. Usage Time Limits</h2>
+
+        <h2>1. Scope of This Policy</h2>
+
         <p>
-          Where applicable, we provide features that allow parents or guardians
-          to manage and limit children’s usage time, helping prevent overuse.
+          This policy applies to our applications and services where
+          children's use or access may be relevant. It is intended to
+          supplement our
+          <a href="privacy.html">Privacy Policy</a>
+          and does not replace the parental controls, age requirements,
+          or other safety features provided by Apple, Google, or other
+          applicable platforms.
         </p>
+
+        <p>
+          Different countries and regions may have different legal
+          requirements concerning children and minors. Where applicable,
+          we follow the requirements of the jurisdictions in which our
+          applications are distributed.
+        </p>
+
       </div>
 
-      <div class="section">
-        <h2>3. Periodic Break Reminders</h2>
-        <p>
-          Our applications may include reminders encouraging users to take
-          regular breaks after extended periods of use.
-        </p>
-      </div>
 
       <div class="section">
-        <h2>4. Parental Controls</h2>
+
+        <h2>2. Promoting Healthy and Balanced Use</h2>
+
         <p>
-          We support parental control mechanisms such as restricting access,
-          managing usage duration, and disabling certain features where
-          supported by the platform.
+          We encourage users to maintain a reasonable balance between
+          digital activities and everyday life. Our applications are not
+          designed to encourage users to remain engaged for unnecessarily
+          long periods of time.
         </p>
+
+        <p>
+          Where appropriate, we encourage users to take breaks and to
+          balance screen-based activities with sleep, physical activity,
+          outdoor activities, education, family time, and social
+          interaction.
+        </p>
+
       </div>
 
-      <div class="section">
-        <h2>5. No Targeting of Children Under 13</h2>
-        <p>
-          Our applications are not intended for children under the age of 13.
-          We do not knowingly collect personal information from children under
-          13. If such data is discovered, it will be promptly deleted.
-        </p>
-      </div>
 
       <div class="section">
-        <h2>6. Encouraging Offline Activities</h2>
+
+        <h2>3. Reducing Excessive or Prolonged Use</h2>
+
         <p>
-          We encourage children to balance screen time with offline activities,
-          including physical exercise, outdoor play, and social interaction.
+          Depending on the application and platform, certain products
+          may provide reminders or other mechanisms intended to encourage
+          users to take periodic breaks.
         </p>
+
+        <p>
+          The availability and behavior of such features may vary by
+          application, operating system, device, region, and version.
+          We do not represent that every application provides a specific
+          usage-time management or break-reminder feature.
+        </p>
+
       </div>
 
+
       <div class="section">
-        <h2>7. Contact Us</h2>
+
+        <h2>4. Parental and Platform Controls</h2>
+
         <p>
-          If you have any questions regarding this policy, please contact us:
+          Parents and legal guardians are encouraged to use the parental
+          controls and screen-time management tools provided by the
+          relevant operating system or app store.
         </p>
+
+        <ul>
+          <li>
+            Apple devices may provide Screen Time, parental controls,
+            age restrictions, and purchase controls.
+          </li>
+
+          <li>
+            Android devices and Google services may provide family
+            management, parental controls, and screen-time tools.
+          </li>
+
+          <li>
+            Parents or guardians should review the age rating and
+            available settings before allowing a child to use an
+            application.
+          </li>
+        </ul>
+
         <p>
-          <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong><br />
-          Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
-          Address: No. 1916, 19th Floor, Unit 1, Building 3, No. 500 Jiaozi Avenue,
+          These platform-level controls can help parents or guardians
+          manage access, purchases, usage time, and other aspects of
+          children's device use.
+        </p>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>5. Age Requirements and Children's Privacy</h2>
+
+        <p>
+          Unless an individual application expressly states otherwise,
+          our applications are not intended to knowingly collect personal
+          information directly from children under 13.
+        </p>
+
+        <p>
+          Where local law establishes a higher minimum age for the
+          collection or processing of children's personal information,
+          the applicable legal age will apply.
+        </p>
+
+        <p>
+          We do not knowingly request children to provide personal
+          information that is unnecessary for the operation of the
+          application.
+        </p>
+
+        <p>
+          Our handling of personal information is described in our
+          <a href="privacy.html">Privacy Policy</a>.
+        </p>
+
+        <div class="notice">
+
+          <div class="notice-title">
+            If you believe a child has provided personal information
+          </div>
+
+          <p>
+            If you believe that a child has provided personal information
+            to us without appropriate parental or guardian involvement,
+            please contact us at
+            <a href="mailto:miaozhi.ai@gmail.com">
+              miaozhi.ai@gmail.com
+            </a>.
+            We will review the request and take appropriate action
+            where required by applicable law.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>6. Responsible Product Design</h2>
+
+        <p>
+          We aim to design our applications in a way that does not
+          intentionally encourage compulsive or excessive use.
+        </p>
+
+        <p>
+          Where applicable, we seek to avoid product mechanisms that
+          deliberately pressure children to continue using an
+          application solely to maintain engagement.
+        </p>
+
+        <p>
+          Features, content, advertising, and purchase options may vary
+          between applications and regions and are subject to the
+          applicable platform requirements.
+        </p>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>7. Purchases and Advertising</h2>
+
+        <p>
+          Where an application contains advertising or in-app purchases,
+          the availability and presentation of those features may depend
+          on the application, platform, region, and applicable laws.
+        </p>
+
+        <p>
+          Parents and guardians should use the purchase restrictions and
+          parental controls provided by their device or app store to
+          prevent unauthorized purchases.
+        </p>
+
+        <p>
+          We do not encourage children to make purchases or provide
+          payment information without appropriate authorization.
+        </p>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>8. Encouraging Offline Activities</h2>
+
+        <p>
+          We encourage children and families to maintain a healthy
+          balance between digital products and offline activities,
+          including:
+        </p>
+
+        <ul>
+          <li>Regular physical activity and outdoor play</li>
+          <li>Healthy sleep and rest</li>
+          <li>Education and learning</li>
+          <li>Family activities and communication</li>
+          <li>Face-to-face social interaction</li>
+        </ul>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>9. Safety, Complaints, and Feedback</h2>
+
+        <p>
+          Parents, guardians, users, and other concerned individuals may
+          contact us if they have concerns about children's safety,
+          excessive use, inappropriate content, privacy, advertising,
+          or other issues related to our applications.
+        </p>
+
+        <p>
+          We will review relevant reports and, where appropriate, take
+          reasonable measures consistent with applicable law and
+          platform requirements.
+        </p>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>10. Changes to This Policy</h2>
+
+        <p>
+          We may update this policy from time to time to reflect changes
+          to our applications, services, legal requirements, or platform
+          policies.
+        </p>
+
+        <p>
+          When we make changes, we will update the “Last updated” date
+          shown at the top of this page. Continued use of our applications
+          after an updated policy becomes effective means that the
+          updated policy will apply to the extent permitted by law.
+        </p>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h2>11. Contact Us</h2>
+
+        <p>
+          If you have questions, concerns, or requests regarding this
+          policy, please contact us:
+          <br><br>
+
+          <strong>
+            CHENGDU MIAOZHI TECHNOLOGY CO., LTD.
+          </strong>
+          <br>
+
+          Email:
+          <a href="mailto:miaozhi.ai@gmail.com">
+            miaozhi.ai@gmail.com
+          </a>
+          <br>
+
+          Address:
+          No. 1916, 19th Floor, Unit 1, Building 3,
+          No. 500 Jiaozi Avenue,
           Chengdu High-tech Zone, China
         </p>
+
       </div>
 
-      <hr />
-      <p style="text-align:center;">
-        We are committed to providing a safe and healthy digital environment for children.
-      </p>
+
+      <footer class="footer">
+
+        <div class="footer-divider"></div>
+
+        <p>
+          We are committed to promoting safe, responsible,
+          and healthy digital experiences.
+        </p>
+
+        <div class="footer-links">
+          <a href="privacy.html">Privacy Policy</a>
+        </div>
+
+      </footer>
+
     </div>
 
-    <!-- ================= 中文 ================= -->
+
+    <!-- =====================================================
+         中文
+         ===================================================== -->
+
     <div class="chinese-content">
-      <h1>儿童防沉迷政策</h1>
-      <p style="text-align:center;"><em>最后更新日期：2025年7月10日</em></p>
 
-      <div class="section">
-        <p>
-          <strong>成都妙至科技有限公司</strong>（以下简称“我们”）高度重视儿童的身心健康，
-          致力于为儿童提供安全、健康、积极的数字产品体验。
-          本儿童防沉迷政策说明我们在防止过度使用方面所采取的措施。
+      <header class="document-header">
+<h1>儿童健康使用政策</h1>
+
+        <p class="last-updated">
+          最后更新：2026年9月
         </p>
+
+      </header>
+
+
+      <div class="intro">
+
+        <p>
+          <strong>成都妙至科技有限公司</strong>（以下简称“我们”）
+          重视儿童及未成年人的安全、隐私和健康使用体验。
+          本《儿童健康使用政策》说明我们在减少过度使用、
+          倡导合理数字使用习惯以及保护儿童相关权益方面所遵循的原则。
+        </p>
+
       </div>
 
-      <div class="section">
-        <h2>1. 提倡健康使用</h2>
-        <p>
-          我们倡导合理、适度地使用应用产品，不鼓励长时间或不当使用，
-          并在产品设计中融入健康使用理念。
-        </p>
-      </div>
 
       <div class="section">
-        <h2>2. 使用时间管理</h2>
+
+        <h2>1. 政策适用范围</h2>
+
         <p>
-          在适用情况下，我们支持家长通过系统或应用功能对儿童的使用时间进行管理，
-          帮助防止沉迷。
+          本政策适用于涉及儿童使用或访问情形的相关应用及服务。
+          本政策作为
+          <a href="privacy.html">《隐私政策》</a>
+          的补充，不取代 Apple、Google 或其他适用平台提供的
+          家长控制、年龄限制及其他安全功能。
         </p>
+
+        <p>
+          不同国家和地区对于儿童及未成年人可能有不同的法律要求。
+          在适用的情况下，我们将遵守应用发布和提供所在地区的相关法律法规。
+        </p>
+
       </div>
+
 
       <div class="section">
-        <h2>3. 定期休息提示</h2>
+
+        <h2>2. 倡导健康、合理的使用方式</h2>
+
         <p>
-          应用可能在连续使用一段时间后提示用户进行休息，
-          以降低长时间使用带来的风险。
+          我们倡导用户保持合理的数字使用习惯，在使用应用与现实生活之间
+          保持适当平衡。我们的应用不会以鼓励用户进行不必要的长时间使用
+          为产品设计目标。
         </p>
+
+        <p>
+          在适当情况下，我们鼓励用户合理安排休息，并平衡数字活动与
+          睡眠、体育锻炼、户外活动、学习、家庭活动及社会交往。
+        </p>
+
       </div>
+
 
       <div class="section">
-        <h2>4. 家长控制支持</h2>
+
+        <h2>3. 减少过度或长时间使用</h2>
+
         <p>
-          我们支持平台提供的家长控制功能，包括限制使用时长、
-          管理访问权限及关闭部分功能等。
+          根据具体应用及平台情况，部分产品可能提供使用提醒、
+          休息提示或其他旨在帮助用户合理安排使用时间的功能。
         </p>
+
+        <p>
+          相关功能是否提供以及具体表现可能因应用、操作系统、
+          设备、地区和应用版本而有所不同。
+          我们不表示所有应用均提供特定的使用时长管理或休息提醒功能。
+        </p>
+
       </div>
+
 
       <div class="section">
-        <h2>5. 不面向13岁以下儿童</h2>
+
+        <h2>4. 家长及平台控制功能</h2>
+
         <p>
-          本应用不以13岁以下儿童为目标用户。
-          若发现无意中收集了13岁以下儿童的个人信息，
-          我们将立即删除相关数据。
+          我们建议家长或法定监护人合理使用相关操作系统和应用商店
+          提供的家长控制及屏幕使用时间管理功能。
         </p>
+
+        <ul>
+
+          <li>
+            Apple 设备通常提供“屏幕使用时间”、家长控制、
+            年龄限制及购买限制等功能。
+          </li>
+
+          <li>
+            Android 设备及 Google 服务可能提供家庭管理、
+            家长控制及屏幕使用时间管理功能。
+          </li>
+
+          <li>
+            家长或监护人在允许儿童使用应用前，应关注应用的年龄分级
+            以及设备和应用商店提供的相关设置。
+          </li>
+
+        </ul>
+
+        <p>
+          这些平台级控制功能可以帮助家长或监护人管理儿童的应用访问、
+          使用时间、购买行为及其他设备使用情况。
+        </p>
+
       </div>
+
 
       <div class="section">
-        <h2>6. 鼓励线下活动</h2>
+
+        <h2>5. 年龄要求与儿童隐私</h2>
+
         <p>
-          我们鼓励儿童将数字娱乐与现实生活相结合，
-          多参与户外活动、体育锻炼和社交互动。
+          除非具体应用另有明确说明，我们的应用不以在知情情况下
+          直接收集13岁以下儿童个人信息为目的。
         </p>
+
+        <p>
+          如果适用法律规定了更高的儿童个人信息收集或处理年龄要求，
+          则以相关法律规定的年龄要求为准。
+        </p>
+
+        <p>
+          我们不会在非必要情况下主动要求儿童提供个人信息。
+        </p>
+
+        <p>
+          有关个人信息的收集、使用、存储和保护方式，
+          请参阅我们的
+          <a href="privacy.html">《隐私政策》</a>。
+        </p>
+
+        <div class="notice">
+
+          <div class="notice-title">
+            如果您认为儿童向我们提供了个人信息
+          </div>
+
+          <p>
+            如果您认为儿童在未经适当的家长或监护人参与的情况下
+            向我们提供了个人信息，请通过
+            <a href="mailto:miaozhi.ai@gmail.com">
+              miaozhi.ai@gmail.com
+            </a>
+            联系我们。
+            我们会根据具体情况进行核实，并在适用法律要求的范围内
+            采取适当措施。
+          </p>
+
+        </div>
+
       </div>
+
 
       <div class="section">
-        <h2>7. 联系我们</h2>
+
+        <h2>6. 负责任的产品设计</h2>
+
         <p>
-          如您对本儿童防沉迷政策有任何疑问，请联系我们：
+          我们致力于以负责任的方式设计和运营应用，
+          不以故意诱导儿童进行强迫性或过度使用为产品目标。
         </p>
+
         <p>
-          <strong>成都妙至科技有限公司</strong><br />
-          邮箱：<a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
-          地址：中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号
+          在适用情况下，我们会避免通过不合理的设计机制，
+          故意向儿童施加持续使用应用的压力。
         </p>
+
+        <p>
+          不同应用中的功能、内容、广告及购买选项可能有所不同，
+          并会受到具体应用、地区以及适用平台规则的影响。
+        </p>
+
       </div>
 
-      <hr />
-      <p style="text-align:center;">
-        我们致力于为儿童营造安全、健康的数字使用环境。
-      </p>
+
+      <div class="section">
+
+        <h2>7. 购买与广告</h2>
+
+        <p>
+          如果具体应用包含广告或应用内购买，其提供方式和展示形式
+          可能因应用、平台、地区及适用法律法规而有所不同。
+        </p>
+
+        <p>
+          我们建议家长或监护人使用设备和应用商店提供的购买限制及
+          家长控制功能，以防止未经授权的购买行为。
+        </p>
+
+        <p>
+          我们不会鼓励儿童在未经适当授权的情况下进行购买或提供
+          支付信息。
+        </p>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>8. 鼓励参与线下活动</h2>
+
+        <p>
+          我们鼓励儿童及家庭在数字产品使用与现实生活之间保持健康平衡，
+          合理安排以下活动：
+        </p>
+
+        <ul>
+          <li>体育锻炼和户外活动</li>
+          <li>充足的睡眠与休息</li>
+          <li>学习和教育活动</li>
+          <li>家庭活动与交流</li>
+          <li>面对面的社会交往</li>
+        </ul>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>9. 安全问题、投诉与反馈</h2>
+
+        <p>
+          家长、监护人、用户以及其他关注儿童安全的人员，
+          如果对儿童安全、过度使用、不适当内容、隐私、广告
+          或我们的应用存在其他疑问，可以联系我们。
+        </p>
+
+        <p>
+          对于收到的相关反馈和报告，我们会进行合理审查，
+          并在适用法律法规及平台规则要求的范围内采取适当措施。
+        </p>
+
+      </div>
+
+
+      <div class="section">
+
+        <h2>10. 政策更新</h2>
+
+        <p>
+          我们可能根据应用功能、服务内容、法律法规或平台政策的变化，
+          不时更新本政策。
+        </p>
+
+        <p>
+          更新后，我们会修改本页面顶部的“最后更新”日期。
+          在政策更新后继续使用相关应用的，表示更新后的政策将在法律
+          允许的范围内适用。
+        </p>
+
+      </div>
+
+
+      <div class="contact-card">
+
+        <h2>11. 联系我们</h2>
+
+        <p>
+          如果您对本政策有任何问题、意见、投诉或相关请求，
+          可以通过以下方式联系我们：
+          <br><br>
+
+          <strong>成都妙至科技有限公司</strong>
+          <br>
+
+          邮箱：
+          <a href="mailto:miaozhi.ai@gmail.com">
+            miaozhi.ai@gmail.com
+          </a>
+          <br>
+
+          地址：
+          中国（四川）自由贸易试验区成都高新区交子大道500号
+          3栋1单元19层1916号
+        </p>
+
+      </div>
+
+
+      <footer class="footer">
+
+        <div class="footer-divider"></div>
+
+        <p>
+          我们致力于促进安全、负责任和健康的数字产品使用体验。
+        </p>
+
+        <div class="footer-links">
+          <a href="privacy.html">隐私政策</a>
+        </div>
+
+      </footer>
+
     </div>
+
   </div>
 
   <script>
-    function toggleLang() {
-      const currentLang = localStorage.getItem('language') || 'en';
-      switchLang(currentLang === 'en' ? 'zh' : 'en');
-    }
-
     function switchLang(lang) {
-      localStorage.setItem('language', lang);
-      document.querySelector('.english-content').classList.toggle('active', lang === 'en');
-      document.querySelector('.chinese-content').classList.toggle('active', lang === 'zh');
-      document.getElementById('flag').src =
-        lang === 'en' ? '../images/usa-flag.png' : '../images/china-flag.png';
+      const english = document.querySelector(".english-content");
+      const chinese = document.querySelector(".chinese-content");
+      const enButton = document.getElementById("enButton");
+      const zhButton = document.getElementById("zhButton");
+
+      if (lang === "zh") {
+        english.classList.remove("active");
+        chinese.classList.add("active");
+        enButton.classList.remove("active");
+        zhButton.classList.add("active");
+        document.documentElement.lang = "zh-CN";
+        localStorage.setItem("language", "zh");
+      } else {
+        chinese.classList.remove("active");
+        english.classList.add("active");
+        zhButton.classList.remove("active");
+        enButton.classList.add("active");
+        document.documentElement.lang = "en";
+        localStorage.setItem("language", "en");
+      }
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
-    window.onload = function () {
-      switchLang(localStorage.getItem('language') || 'en');
-    };
+    window.addEventListener("DOMContentLoaded", function () {
+      const savedLanguage = localStorage.getItem("language") || "en";
+      switchLang(savedLanguage);
+    });
   </script>
+
 </body>
 </html>
