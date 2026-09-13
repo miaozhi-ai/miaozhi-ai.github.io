@@ -6,66 +6,82 @@
   <title>Terms of Service</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: "Red Hat Text", Arial, sans-serif;
-      background-color: #ffffff;
-      color: #333;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display",
+                   "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f7;
+      color: #1d1d1f;
       margin: 0;
       padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 52px;
+      background: rgba(255, 255, 255, 0.78);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
+
+    .header-inner {
+      max-width: 900px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+
+    .language-switch {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px;
+      background: #e9e9eb;
+      border-radius: 9px;
+    }
+
+    .language-switch button {
+      border: 0;
+      background: transparent;
+      color: #6e6e73;
+      font: inherit;
+      font-size: 13px;
+      line-height: 1;
+      padding: 5px 12px;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .language-switch button.active {
+      background: #ffffff;
+      color: #1d1d1f;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+    }
+
+    .language-switch button:focus-visible {
+      outline: 2px solid #0071e3;
+      outline-offset: 1px;
     }
 
     .container {
-      max-width: 800px;
+      max-width: 900px;
       margin: 0 auto;
-      padding: 20px;
-    }
-
-    h1, h2, h3 {
-      font-weight: 700;
-      color: #000;
-    }
-
-    h1 {
-      text-align: center;
-      margin-top: 30px;
-    }
-
-    h2 {
-      margin-top: 24px;
-      font-size: 24px;
-    }
-
-    p, ul {
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    a {
-      color: #1e3a8a;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .section {
-      margin-bottom: 40px;
-    }
-
-    .lang-toggle {
-      position: absolute;
-      top: 10px;
-      right: 30px;
-      cursor: pointer;
-    }
-
-    .lang-toggle img {
-      width: 30px;
+      padding: 72px 24px 80px;
     }
 
     .english-content,
@@ -78,282 +94,765 @@
       display: block;
     }
 
-    hr {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #ddd;
+    .document-header {
+      text-align: center;
+      padding: 0 0 54px;
+    }
+
+    .document-header h1 {
+      margin: 0 0 14px;
+      font-size: 42px;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+      font-weight: 700;
+      color: #1d1d1f;
+    }
+
+    .last-updated {
+      margin: 0;
+      color: #6e6e73;
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .intro {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 28px 30px;
+      margin-bottom: 42px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .intro p {
+      margin: 0;
+    }
+
+    .section {
+      margin-bottom: 42px;
+    }
+
+    .section h2 {
+      margin: 0 0 15px;
+      font-size: 28px;
+      line-height: 1.25;
+      letter-spacing: -0.015em;
+      font-weight: 650;
+      color: #1d1d1f;
+    }
+
+    .section p,
+    .section ul {
+      margin: 0 0 14px;
+      font-size: 16px;
+      line-height: 1.72;
+      color: #3a3a3c;
+    }
+
+    .section p:last-child,
+    .section ul:last-child {
+      margin-bottom: 0;
+    }
+
+    .section ul {
+      padding-left: 25px;
+    }
+
+    .section li {
+      margin-bottom: 9px;
+      padding-left: 3px;
+    }
+
+    .section li:last-child {
+      margin-bottom: 0;
+    }
+
+    strong {
+      color: #1d1d1f;
+      font-weight: 600;
+    }
+
+    a {
+      color: #0071e3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .notice {
+      margin-top: 18px;
+      padding: 17px 19px;
+      background: #f5f5f7;
+      border-radius: 12px;
+      color: #515154;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .contact-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 26px 28px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    }
+
+    .contact-card p {
+      margin: 0;
+    }
+
+    .footer {
+      margin-top: 52px;
+      padding-top: 26px;
+      border-top: 1px solid #d2d2d7;
+      text-align: center;
+      color: #6e6e73;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 600px) {
+      .header-inner {
+        padding: 0 16px;
+      }
+
+      .container {
+        padding: 48px 18px 60px;
+      }
+
+      .document-header {
+        padding-bottom: 40px;
+      }
+
+      .document-header h1 {
+        font-size: 34px;
+      }
+
+      .intro {
+        padding: 22px 20px;
+        border-radius: 16px;
+        margin-bottom: 34px;
+      }
+
+      .section {
+        margin-bottom: 36px;
+      }
+
+      .section h2 {
+        font-size: 24px;
+      }
+
+      .section p,
+      .section ul {
+        font-size: 15.5px;
+        line-height: 1.7;
+      }
+
+      .contact-card {
+        padding: 22px 20px;
+        border-radius: 16px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="lang-toggle">
-      <a href="javascript:void(0);" onclick="toggleLang()">
-        <img id="flag" src="../images/china-flag.png" alt="Country Flag">
-      </a>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="language-switch">
+        <button id="enButton" class="active" onclick="switchLang('en')">
+          English
+        </button>
+        <button id="zhButton" onclick="switchLang('zh')">
+          中文
+        </button>
+      </div>
     </div>
+  </header>
+
+  <div class="container">
 
     <!-- ================= ENGLISH ================= -->
     <div class="english-content active">
-      <h1>Terms of Service</h1>
-      <p style="text-align:center;"><em>Last updated: July 10, 2025</em></p>
 
-      <div class="section">
+      <div class="document-header">
+        <h1>Terms of Service</h1>
+        <p class="last-updated"><em>Last updated: July 10, 2025</em></p>
+      </div>
+
+      <div class="intro">
         <p>
-          Welcome to the applications and services (“Services”) provided by
-          <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong>
-          (“we”, “us”, or “our”).
-          By accessing or using our mobile applications or websites, you agree to
-          be bound by these Terms of Service.
+          Welcome to the applications, websites, and related services (“Services”)
+          provided by <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong>
+          (“we”, “us”, or “our”). These Terms of Service (“Terms”) explain the
+          rules and conditions that apply to your access to and use of our Services.
+          By downloading, installing, accessing, or using any of our Services, you
+          acknowledge that you have read, understood, and agreed to these Terms.
+          If you do not agree with these Terms, please do not use the Services.
         </p>
       </div>
 
       <div class="section">
         <h2>1. Acceptance of Terms</h2>
         <p>
-          By downloading, installing, or using our Services, you confirm that you
-          have read, understood, and agreed to these Terms.
-          If you do not agree, you may not use the Services.
+          By downloading, installing, accessing, or using our Services, you confirm
+          that you have read, understood, and agreed to be bound by these Terms and
+          any applicable policies or notices referenced in them.
+        </p>
+        <p>
+          These Terms apply to all users of the Services. If you use the Services
+          on behalf of another person or organization, you represent that you have
+          the authority to accept these Terms on their behalf.
+        </p>
+        <p>
+          If you do not agree to any part of these Terms, you must stop using the
+          Services and, where applicable, remove the applications from your device.
         </p>
       </div>
 
       <div class="section">
         <h2>2. Changes to Terms</h2>
         <p>
-          We may update these Terms from time to time. Changes take effect
-          immediately upon posting. Continued use constitutes acceptance.
+          We may revise these Terms from time to time to reflect changes to our
+          Services, applicable laws, security requirements, or business practices.
+          When we make changes, we may update the “Last updated” date shown at the
+          beginning of these Terms.
+        </p>
+        <p>
+          Unless otherwise required by applicable law, updated Terms become
+          effective when posted or otherwise made available through the Services.
+          Your continued use of the Services after the effective date means that
+          you accept the updated Terms.
+        </p>
+        <p>
+          If a change materially affects your rights or obligations, we may provide
+          additional notice where appropriate.
         </p>
       </div>
 
       <div class="section">
         <h2>3. Eligibility</h2>
         <p>
-          You must be at least 13 years old (or the minimum legal age in your
-          jurisdiction) to use the Services.
+          You must be at least 13 years old, or the minimum legal age required in
+          your jurisdiction, to use the Services. If applicable law requires a
+          higher age for certain Services or activities, that higher age requirement
+          will apply.
+        </p>
+        <p>
+          If you are under the age required to independently consent to the use of
+          an online service in your jurisdiction, you should use the Services only
+          with the involvement and permission of a parent or legal guardian where
+          required by law.
+        </p>
+        <p>
+          By using the Services, you represent that you meet the applicable
+          eligibility requirements and that the information you provide to us is
+          accurate to the extent information is requested.
         </p>
       </div>
 
       <div class="section">
         <h2>4. Use of the Services</h2>
+        <p>
+          You may use the Services only for lawful purposes and in accordance with
+          these Terms. You are responsible for your use of the Services and for
+          complying with all laws and regulations that apply to you.
+        </p>
         <p>You agree not to:</p>
         <ul>
-          <li>Copy, modify, or distribute the Services without permission;</li>
-          <li>Attempt unauthorized access to our systems;</li>
-          <li>Violate applicable laws or regulations.</li>
+          <li>Copy, reproduce, modify, adapt, translate, distribute, sell, rent, lease, or otherwise exploit the Services or any part of them without our permission, except where expressly permitted by law;</li>
+          <li>Attempt to gain unauthorized access to the Services, our systems, networks, accounts, or related infrastructure;</li>
+          <li>Reverse engineer, decompile, disassemble, or attempt to derive the source code of the Services, except to the extent such restrictions are prohibited by applicable law;</li>
+          <li>Interfere with, disrupt, overload, or otherwise negatively affect the operation or security of the Services;</li>
+          <li>Use the Services to violate applicable laws, regulations, or the rights of others;</li>
+          <li>Use automated methods or other means to access the Services in a manner that could damage, interfere with, or place an unreasonable burden on our systems; or</li>
+          <li>Remove, alter, or obscure copyright, trademark, attribution, or other proprietary notices contained in the Services.</li>
         </ul>
+        <div class="notice">
+          Some Services may provide tools for navigation, health-related measurements,
+          fitness tracking, device information, or other practical purposes. Such
+          features are provided for general informational or utility purposes and
+          should not be treated as a substitute for professional advice or as a
+          guarantee of accuracy.
+        </div>
       </div>
 
       <div class="section">
         <h2>5. User Content</h2>
         <p>
-          You retain ownership of content you submit (“User Content”).
-          You grant us a worldwide, non-exclusive, royalty-free license to use it
-          to operate the Services.
+          Certain Services may allow you to create, enter, store, or otherwise
+          submit information, files, records, routes, notes, or other materials
+          (“User Content”). You retain your ownership rights in User Content to the
+          extent you have such rights.
+        </p>
+        <p>
+          You are responsible for ensuring that your User Content is lawful and
+          that you have all rights, permissions, and consents necessary for you to
+          provide or use it through the Services.
+        </p>
+        <p>
+          By submitting User Content where the Services require us to process it
+          in order to provide the requested functionality, you grant us a
+          worldwide, non-exclusive, royalty-free license to host, store, reproduce,
+          process, transmit, and otherwise use that User Content only as reasonably
+          necessary to operate, maintain, secure, and improve the applicable
+          Services, subject to our Privacy Policy and applicable law.
+        </p>
+        <p>
+          You should maintain your own backups of important User Content. We do not
+          guarantee that User Content will always be available, preserved, or
+          recoverable.
         </p>
       </div>
 
       <div class="section">
         <h2>6. Intellectual Property</h2>
         <p>
-          All content, trademarks, and software are owned by or licensed to
-          CHENGDU MIAOZHI TECHNOLOGY CO., LTD.
+          The Services and their contents, including software, source and object
+          code, designs, interfaces, graphics, logos, trademarks, text, and other
+          materials, are owned by or licensed to
+          <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong> and are protected by
+          applicable intellectual property and other laws.
+        </p>
+        <p>
+          Except for the limited right to use the Services in accordance with these
+          Terms, no ownership interest or other intellectual property right is
+          transferred to you. You may not use our trademarks, logos, product names,
+          or other proprietary materials without our prior written permission.
+        </p>
+        <p>
+          Any third-party materials or services incorporated into or made available
+          through the Services remain the property of their respective owners and
+          may be subject to separate terms.
         </p>
       </div>
 
       <div class="section">
         <h2>7. Privacy</h2>
         <p>
-          Your use of the Services is subject to our
-          <a href="https://miaozhi-ai.github.io/aboutus/privacy.html" target="_blank">
+          Your use of the Services is also subject to our
+          <a href="https://miaozhi-ai.github.io/aboutus/privacy.html" target="_blank" rel="noopener noreferrer">
             Privacy Policy
-          </a>.
+          </a>,
+          which explains how we collect, use, store, and otherwise process
+          information in connection with the Services.
+        </p>
+        <p>
+          By using the Services, you acknowledge that information may be processed
+          as described in the Privacy Policy. Please review the Privacy Policy
+          carefully before using the Services.
         </p>
       </div>
 
       <div class="section">
         <h2>8. Third-Party Services</h2>
         <p>
-          We are not responsible for third-party content or services.
+          Some features of the Services may depend on or interact with third-party
+          platforms, websites, maps, payment services, operating-system features,
+          analytics services, or other third-party products (“Third-Party Services”).
+        </p>
+        <p>
+          Third-Party Services are provided and controlled by their respective
+          providers. We do not control and are not responsible for the availability,
+          accuracy, security, content, policies, or practices of Third-Party Services.
+        </p>
+        <p>
+          Your use of a Third-Party Service may be subject to that provider’s own
+          terms and privacy policies. We encourage you to review those terms before
+          using the relevant third-party functionality.
         </p>
       </div>
 
       <div class="section">
         <h2>9. Disclaimer</h2>
         <p>
-          Services are provided “as is” without warranties of any kind.
+          To the maximum extent permitted by applicable law, the Services are
+          provided on an “as is” and “as available” basis, without warranties or
+          guarantees of any kind, whether express, implied, or statutory.
         </p>
+        <p>
+          We do not guarantee that the Services will always be uninterrupted,
+          error-free, secure, accurate, complete, or available at all times, or
+          that any particular feature will remain available.
+        </p>
+        <p>
+          Information produced or displayed by the Services may depend on device
+          sensors, operating-system capabilities, network conditions, third-party
+          data, or other factors outside our control. You should independently
+          evaluate information before relying on it where accuracy is important.
+        </p>
+        <div class="notice">
+          Nothing in these Terms excludes or limits any warranty, right, or remedy
+          that cannot lawfully be excluded or limited under the laws applicable to you.
+        </div>
       </div>
 
       <div class="section">
         <h2>10. Limitation of Liability</h2>
         <p>
-          We shall not be liable for indirect or consequential damages.
+          To the maximum extent permitted by applicable law, we and our directors,
+          officers, employees, affiliates, licensors, and service providers will
+          not be liable for any indirect, incidental, special, consequential, or
+          punitive damages, or for any loss of profits, revenue, data, goodwill,
+          business opportunities, or other intangible losses arising from or related
+          to your use of, or inability to use, the Services.
+        </p>
+        <p>
+          To the extent permitted by law, our total liability for claims arising out
+          of or relating to the Services or these Terms will be limited to the amount
+          you paid to us for the applicable Service during the twelve months
+          immediately preceding the event giving rise to the claim, or the minimum
+          amount required by applicable law if a different limitation is mandatory.
+        </p>
+        <p>
+          These limitations apply to the fullest extent permitted by applicable law,
+          but do not limit liability that cannot legally be limited or excluded.
         </p>
       </div>
 
       <div class="section">
         <h2>11. Termination</h2>
         <p>
-          We may suspend or terminate access for violations of these Terms.
+          You may stop using the Services at any time. If you no longer wish to use
+          an application, you may uninstall it from your device where applicable.
+        </p>
+        <p>
+          We may suspend, restrict, or terminate your access to all or part of the
+          Services if we reasonably believe that you have violated these Terms,
+          applicable law, or the rights of others, or if necessary to protect the
+          security, integrity, or operation of the Services.
+        </p>
+        <p>
+          We may also discontinue or modify all or part of a Service where reasonably
+          necessary for operational, security, legal, or business reasons.
+        </p>
+        <p>
+          Provisions that by their nature should survive termination, including
+          intellectual property, disclaimers, limitations of liability, and
+          applicable dispute provisions, will continue to apply after termination.
         </p>
       </div>
 
       <div class="section">
         <h2>12. Governing Law</h2>
         <p>
-          These Terms are governed by the laws of the People’s Republic of China.
+          These Terms are governed by the laws of the People’s Republic of China,
+          without regard to conflict-of-law principles, except where mandatory
+          provisions of the laws of your jurisdiction provide otherwise.
+        </p>
+        <p>
+          Any dispute arising out of or relating to these Terms or the Services
+          shall, to the extent permitted by applicable law, be submitted to the
+          competent courts in Chengdu, Sichuan, China.
+        </p>
+        <p>
+          Nothing in this section is intended to deprive consumers of any mandatory
+          rights or protections that cannot be waived under the laws applicable to
+          them.
         </p>
       </div>
 
       <div class="section">
         <h2>13. Contact Us</h2>
-        <p>
-          <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong><br />
-          Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
-          Address: No. 1916, 19th Floor, Unit 1, Building 3, No. 500 Jiaozi Avenue,
-          Chengdu High-tech Zone, China
-        </p>
+        <div class="contact-card">
+          <p>
+            <strong>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</strong><br />
+            Email:
+            <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
+            Address: No. 1916, 19th Floor, Unit 1, Building 3, No. 500 Jiaozi Avenue,
+            Chengdu High-tech Zone, China
+          </p>
+        </div>
       </div>
 
-      <hr />
-      <p style="text-align:center;">Thank you for using our services.</p>
+      <div class="footer">
+        Thank you for using our services.
+      </div>
     </div>
 
     <!-- ================= 中文 ================= -->
     <div class="chinese-content">
-      <h1>服务条款</h1>
-      <p style="text-align:center;"><em>最后更新日期：2025年7月10日</em></p>
 
-      <div class="section">
+      <div class="document-header">
+        <h1>服务条款</h1>
+        <p class="last-updated"><em>最后更新日期：2025年7月10日</em></p>
+      </div>
+
+      <div class="intro">
         <p>
-          欢迎使用<strong>成都妙至科技有限公司</strong>（以下简称“我们”）提供的应用程序和服务（以下简称“服务”）。
-          您访问或使用本服务即表示您同意受本服务条款的约束。
+          欢迎使用<strong>成都妙至科技有限公司</strong>（以下简称“我们”）提供的应用程序、
+          网站及相关服务（以下简称“服务”）。本服务条款（以下简称“本条款”）用于说明您访问、
+          下载、安装和使用我们服务时适用的规则和条件。您下载、安装、访问或使用我们的任何服务，
+          即表示您已阅读、理解并同意接受本条款的约束。如您不同意本条款，请停止使用相关服务。
         </p>
       </div>
 
       <div class="section">
         <h2>1. 接受条款</h2>
         <p>
-          通过下载、安装或使用本服务，表示您已阅读、理解并同意本条款。
-          若您不同意本条款，请勿使用本服务。
+          通过下载、安装、访问或使用本服务，表示您已阅读、理解并同意受本条款以及本条款中引用的
+          相关政策和通知约束。
+        </p>
+        <p>
+          本条款适用于所有服务用户。如果您代表其他个人或组织使用本服务，则表示您已获得必要的
+          授权，可以代表该个人或组织接受本条款。
+        </p>
+        <p>
+          如果您不同意本条款中的任何内容，应立即停止使用本服务，并在适用情况下从您的设备中
+          删除相关应用程序。
         </p>
       </div>
 
       <div class="section">
         <h2>2. 条款变更</h2>
         <p>
-          我们有权不时更新本条款，变更内容自发布之日起生效。
-          您继续使用服务即视为接受修改后的条款。
+          我们可能根据服务内容变化、适用法律、安全要求或业务需要，不时对本条款进行修订。
+          修订时，我们可能会更新本条款开头所显示的“最后更新日期”。
+        </p>
+        <p>
+          除非适用法律另有要求，修订后的条款自发布或通过服务提供之日起生效。
+          您在修订后的条款生效后继续使用本服务，即表示您接受修订后的条款。
+        </p>
+        <p>
+          如果条款变更可能对您的权利或义务产生重大影响，我们将在适当情况下按照适用法律
+          提供额外通知。
         </p>
       </div>
 
       <div class="section">
         <h2>3. 使用资格</h2>
         <p>
-          您须年满13周岁（或您所在司法辖区规定的最低年龄）方可使用本服务。
+          您须年满13周岁，或达到您所在司法辖区规定的使用相关在线服务的最低法定年龄，
+          方可使用本服务。如果适用法律针对特定服务或活动规定了更高的年龄要求，则应遵守
+          更高的年龄要求。
+        </p>
+        <p>
+          如果您尚未达到所在地区可以独立同意使用在线服务的法定年龄，在适用法律要求的情况下，
+          您应在父母或法定监护人的参与和许可下使用本服务。
+        </p>
+        <p>
+          使用本服务即表示您确认自己符合适用的使用资格要求，并在需要提供信息时，尽力确保
+          所提供的信息真实、准确。
         </p>
       </div>
 
       <div class="section">
         <h2>4. 服务使用规则</h2>
+        <p>
+          您仅可将本服务用于合法目的，并应遵守本条款以及适用于您的法律法规。
+          您应对自己的服务使用行为负责，并承担遵守相关法律法规的义务。
+        </p>
+        <p>您同意不得：</p>
         <ul>
-          <li>未经许可复制、修改或传播服务内容；</li>
-          <li>未经授权访问系统；</li>
-          <li>违反法律法规或侵害他人权益。</li>
+          <li>未经我们许可复制、转载、修改、改编、翻译、传播、出售、出租、转让或以其他方式利用本服务或其任何部分，但法律明确允许的除外；</li>
+          <li>试图未经授权访问本服务、我们的系统、网络、账户或相关基础设施；</li>
+          <li>对本服务进行反向工程、反编译、反汇编或试图获取源代码，但适用法律明确禁止限制的范围除外；</li>
+          <li>干扰、破坏、过载或以其他方式影响本服务的正常运行或安全性；</li>
+          <li>利用本服务从事违法活动，或侵犯他人的合法权益；</li>
+          <li>使用自动化程序或其他方式访问本服务，从而对我们的系统造成损害、干扰或不合理负担；</li>
+          <li>删除、修改或隐藏本服务中包含的版权、商标、署名或其他权利声明。</li>
         </ul>
+        <div class="notice">
+          部分服务可能提供导航、健康相关测量、运动记录、设备信息或其他实用功能。
+          此类功能主要用于一般信息或工具用途，其结果可能受到设备传感器、系统能力、网络环境
+          或第三方数据等因素影响，不应被视为专业意见或对结果准确性的保证。
+        </div>
       </div>
 
       <div class="section">
         <h2>5. 用户内容</h2>
         <p>
-          您保留对您提交内容的所有权，但您授权我们为提供服务而合理使用该内容。
+          部分服务可能允许您创建、输入、保存或提交信息、文件、记录、路线、备注或其他材料
+          （以下简称“用户内容”）。在法律允许的范围内，您仍然拥有您所享有的用户内容相关权利。
+        </p>
+        <p>
+          您应确保您的用户内容合法，并确保您拥有通过本服务提供或使用相关用户内容所需的全部
+          权利、许可和授权，不得通过用户内容侵犯任何第三方的合法权益。
+        </p>
+        <p>
+          当相关服务需要我们处理用户内容以实现您主动请求的功能时，您授予我们一项全球范围内、
+          非独占、免版税的有限许可，使我们可以在提供、维护、保护和改进相关服务所合理必要的
+          范围内，对用户内容进行存储、复制、处理、传输和使用；相关处理同时受我们的隐私政策
+          及适用法律约束。
+        </p>
+        <p>
+          对于重要的用户内容，建议您自行保留备份。我们无法保证用户内容始终可用、永久保存
+          或能够在任何情况下恢复。
         </p>
       </div>
 
       <div class="section">
         <h2>6. 知识产权</h2>
         <p>
-          服务中的所有内容、商标和软件均受法律保护，未经许可不得使用。
+          本服务及其中包含的内容，包括软件、源代码和目标代码、设计、用户界面、图形、标识、
+          商标、文字及其他材料，均归<strong>成都妙至科技有限公司</strong>所有或经合法授权使用，
+          并受适用的知识产权及其他法律保护。
+        </p>
+        <p>
+          除本条款明确授予您的有限使用权外，您不会因使用本服务而获得任何所有权或其他知识产权。
+          未经我们事先书面许可，您不得使用我们的商标、标识、产品名称或其他专有材料。
+        </p>
+        <p>
+          本服务中使用或提供的任何第三方材料和服务，其权利仍归相应权利人所有，并可能受到
+          第三方另行制定的条款约束。
         </p>
       </div>
 
       <div class="section">
         <h2>7. 隐私</h2>
         <p>
-          我们对个人信息的处理遵循
-          <a href="https://miaozhi-ai.github.io/aboutus/privacy.html" target="_blank">
+          您对本服务的使用同时受我们的
+          <a href="https://miaozhi-ai.github.io/aboutus/privacy.html" target="_blank" rel="noopener noreferrer">
             隐私政策
-          </a>。
+          </a>
+          约束。隐私政策说明了我们如何收集、使用、存储以及以其他方式处理与本服务相关的信息。
+        </p>
+        <p>
+          使用本服务即表示您了解相关信息可能按照隐私政策所述方式进行处理。
+          在使用本服务前，请仔细阅读我们的隐私政策。
         </p>
       </div>
 
       <div class="section">
         <h2>8. 第三方服务</h2>
         <p>
-          我们不对第三方服务或内容承担责任。
+          部分服务功能可能依赖或连接第三方平台、网站、地图、支付服务、操作系统功能、
+          分析服务或其他第三方产品（以下简称“第三方服务”）。
+        </p>
+        <p>
+          第三方服务由其相应提供方独立提供和控制。我们无法控制第三方服务，因此不对其可用性、
+          准确性、安全性、内容、政策或相关运营行为承担责任。
+        </p>
+        <p>
+          您使用第三方服务时，可能需要遵守第三方服务提供商制定的独立服务条款和隐私政策。
+          我们建议您在使用相关第三方功能前阅读并了解其适用条款。
         </p>
       </div>
 
       <div class="section">
         <h2>9. 免责声明</h2>
         <p>
-          本服务按“现状”提供，不作任何保证。
+          在适用法律允许的最大范围内，本服务按“现状”和“可用”状态提供，我们不对本服务作出
+          任何明示、默示或法定的保证或承诺。
         </p>
+        <p>
+          我们不保证本服务始终连续运行、没有错误、安全可靠、准确完整或随时可用，
+          也不保证任何特定功能会永久保持不变或持续提供。
+        </p>
+        <p>
+          本服务显示或生成的信息可能受到设备传感器、操作系统能力、网络环境、第三方数据
+          或其他我们无法控制的因素影响。对于重要事项，您应根据实际情况独立判断，不应仅依赖
+          本服务提供的信息作出决定。
+        </p>
+        <div class="notice">
+          本条款中的任何内容均不旨在排除或限制适用法律规定不得排除或限制的保证、权利或救济。
+        </div>
       </div>
 
       <div class="section">
         <h2>10. 责任限制</h2>
         <p>
-          在法律允许的范围内，我们不承担间接或后果性损害责任。
+          在适用法律允许的最大范围内，我们以及我们的董事、管理人员、员工、关联公司、
+          许可方和服务提供商，对于因您使用或无法使用本服务而产生或与之相关的任何间接、
+          附带、特殊、后果性或惩罚性损害，以及利润、收入、数据、商誉、商业机会或其他
+          无形损失，不承担责任。
+        </p>
+        <p>
+          在法律允许的范围内，对于因本服务或本条款产生或与之相关的任何索赔，我们承担的
+          累计责任总额以您在引发索赔的事件发生前十二个月内就相关服务实际向我们支付的金额为限；
+          如适用法律规定了不同的强制性责任范围，则以法律要求的最低责任范围为准。
+        </p>
+        <p>
+          上述责任限制将在适用法律允许的最大范围内适用，但不限制任何依法不得限制或排除的责任。
         </p>
       </div>
 
       <div class="section">
         <h2>11. 服务终止</h2>
         <p>
-          若您违反本条款，我们有权暂停或终止服务。
+          您可以随时停止使用本服务。如果您不再希望使用相关应用程序，可以在适用情况下
+          从您的设备中卸载该应用程序。
+        </p>
+        <p>
+          如果我们有合理理由认为您违反本条款、适用法律或他人的合法权益，或者为了保护本服务
+          的安全、完整性和正常运行，我们可以暂停、限制或终止您对全部或部分服务的访问。
+        </p>
+        <p>
+          因运营、安全、法律或业务原因，我们也可能对全部或部分服务进行修改、暂停或停止提供。
+        </p>
+        <p>
+          根据其性质，在服务终止后仍应继续有效的条款，包括知识产权、免责声明、责任限制以及
+          适用的争议解决相关条款，在终止后仍然有效。
         </p>
       </div>
 
       <div class="section">
         <h2>12. 法律适用</h2>
         <p>
-          本条款适用中华人民共和国法律，争议由四川成都法院管辖。
+          本条款受中华人民共和国法律管辖，但不适用其法律冲突规则；如果您所在司法辖区的
+          强制性法律另有规定，则相关强制性规定优先适用。
+        </p>
+        <p>
+          因本条款或本服务产生或与之相关的任何争议，在适用法律允许的范围内，应提交
+          中国四川省成都市有管辖权的法院处理。
+        </p>
+        <p>
+          本条款中的任何内容均不旨在排除或限制消费者依据其适用法律享有的、不得通过协议放弃的
+          强制性权利或保护。
         </p>
       </div>
 
       <div class="section">
         <h2>13. 联系我们</h2>
-        <p>
-          <strong>成都妙至科技有限公司</strong><br />
-          邮箱：<a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
-          地址：中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号
-        </p>
+        <div class="contact-card">
+          <p>
+            <strong>成都妙至科技有限公司</strong><br />
+            邮箱：
+            <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a><br />
+            地址：中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号
+          </p>
+        </div>
       </div>
 
-      <hr />
-      <p style="text-align:center;">感谢您使用我们的服务。</p>
+      <div class="footer">
+        感谢您使用我们的服务。
+      </div>
     </div>
   </div>
 
   <script>
-    function toggleLang() {
-      const currentLang = localStorage.getItem('language') || 'en';
-      switchLang(currentLang === 'en' ? 'zh' : 'en');
-    }
-
     function switchLang(lang) {
-      localStorage.setItem('language', lang);
-      document.querySelector('.english-content').classList.toggle('active', lang === 'en');
-      document.querySelector('.chinese-content').classList.toggle('active', lang === 'zh');
-      document.getElementById('flag').src =
-        lang === 'en' ? '../images/usa-flag.png' : '../images/china-flag.png';
+      const english = document.querySelector(".english-content");
+      const chinese = document.querySelector(".chinese-content");
+      const enButton = document.getElementById("enButton");
+      const zhButton = document.getElementById("zhButton");
+
+      if (lang === "zh") {
+        english.classList.remove("active");
+        chinese.classList.add("active");
+        enButton.classList.remove("active");
+        zhButton.classList.add("active");
+        document.documentElement.lang = "zh-CN";
+        localStorage.setItem("language", "zh");
+      } else {
+        chinese.classList.remove("active");
+        english.classList.add("active");
+        zhButton.classList.remove("active");
+        enButton.classList.add("active");
+        document.documentElement.lang = "en";
+        localStorage.setItem("language", "en");
+      }
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
     }
 
-    window.onload = function () {
-      switchLang(localStorage.getItem('language') || 'en');
-    };
+    window.addEventListener("DOMContentLoaded", function () {
+      const savedLanguage = localStorage.getItem("language") || "en";
+      switchLang(savedLanguage);
+    });
   </script>
 </body>
 </html>
