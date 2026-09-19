@@ -1,123 +1,259 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="成都妙至科技有限公司，专注于为日常生活打造可信赖的 AI 产品、移动工具与智能体验。">
     <title>妙至科技 - MIAOZHI</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <div class="page-bg"></div>
+    <header class="site-header" aria-label="网站导航">
+        <nav class="nav">
+            <a class="brand" href="index.html" aria-label="妙至科技首页">
+                <img src="images/logo_round.png" alt="" class="brand-logo">
+                <span>妙至科技</span>
+            </a>
 
-    <header class="hero">
-        <img src="images/logo_round.png" alt="妙至科技 Logo" class="logo">
-        <h1>妙至科技</h1>
-        <h2>CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</h2>
-        <p class="slogan">
-            为日常生活打造可信赖的 AI 产品<br>
-            <span>Building thoughtful AI products for everyday life.</span>
-        </p>
+            <div class="nav-links" aria-label="页面链接">
+                <a href="#products" data-i18n="navProducts">产品</a>
+                <a href="#legal" data-i18n="navLegal">政策</a>
+                <a href="#company" data-i18n="navCompany">公司</a>
+                <button class="language-toggle" id="languageToggle" type="button" aria-label="Switch to English">English</button>
+            </div>
+        </nav>
     </header>
 
-    <!-- ✅ 产品区：提前 -->
-    <section class="products">
-        <div class="products-inner">
-            <h3 class="section-title">我们的产品</h3>
-            <p class="section-desc">
-                我们专注于 AI 应用、工具类产品与智能体验设计，致力于打造<br>
-                简洁、可靠且具长期价值的软件产品。
-            </p>
-
-            <div class="product-grid">
-
-                <a class="product-card glow-card"
-                   href="https://apps.apple.com/app/id1526914262"
-                   target="_blank"
-                   rel="noopener">
-                    <div class="product-icon">🤖</div>
-                    <h4>AI 应用</h4>
-                    <p>
-                        面向教育、效率与创作场景的 AI 应用，
-                        强调本地隐私、安全与长期可用性。
-                    </p>
-                </a>
-
-                <a class="product-card glow-card"
-                   href="https://apps.apple.com/app/id6450956188"
-                   target="_blank"
-                   rel="noopener">
-                    <div class="product-icon">📱</div>
-                    <h4>移动工具</h4>
-                    <p>
-                        专注 iOS / 多平台的高质量工具类应用，
-                        简洁设计、极致体验。
-                    </p>
-                </a>
-
-                <a class="product-card glow-card"
-                   href="https://apps.apple.com/developer/chengdu-miaozhi-technology-co-ltd/id1465440799"
-                   target="_blank"
-                   rel="noopener">
-                    <div class="product-icon">🧠</div>
-                    <h4>开发者主页</h4>
-                    <p>
-                        浏览我们在 App Store 上发布的全部产品，
-                        持续更新与长期维护。
-                    </p>
-                </a>
-
+    <main>
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="hero-inner">
+                <img src="images/logo.png" alt="妙至科技 Logo" class="hero-logo">
+                <p class="eyebrow">CHENGDU MIAOZHI TECHNOLOGY CO., LTD.</p>
+                <h1 id="hero-title">妙至科技</h1>
+                <p class="hero-copy">
+                    <span data-i18n="heroTitle">为日常生活打造可信赖的 AI 产品。</span>
+                    <span data-i18n="heroSubtitle">Building thoughtful AI products for everyday life.</span>
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#products" data-i18n="viewProducts">查看产品</a>
+                    <a class="button button-secondary" href="mailto:miaozhi.ai@gmail.com" data-i18n="contactUs">联系我们</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- ✅ 公司信息：放后面 -->
-    <section class="info">
-    <div class="info-inner glass">
-        <h3>公司地址</h3>
-        <p>中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号</p>
-        <p class="en">
-            Room 1916, Floor 19, Unit 1, Building 3,<br>
-            No. 500 Jiaozi Avenue, High-Tech Zone,<br>
-            China (Sichuan) Pilot Free Trade Zone, Chengdu, Sichuan, China
-        </p>
+        <section class="intro-section">
+            <div class="section-inner split">
+                <div>
+                    <p class="section-kicker">What we build</p>
+                    <h2 data-i18n="introTitle">简洁、可靠且具长期价值的软件产品。</h2>
+                </div>
+                <p data-i18n="introCopy">
+                    我们专注于 AI 应用、工具类产品与智能体验设计，让技术以更自然、更可靠的方式融入日常工作、学习与创作。
+                </p>
+            </div>
+        </section>
 
-        <h3>联系方式</h3>
-        <p>Email: <a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a></p>
-    </div>
-    </section>
+        <section class="products-section" id="products" aria-labelledby="products-title">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <p class="section-kicker">Our Products</p>
+                    <h2 id="products-title" data-i18n="productsTitle">我们的产品</h2>
+                </div>
+
+                <div class="product-grid">
+                    <a class="product-card" href="https://apps.apple.com/app/id1526914262" target="_blank" rel="noopener">
+                        <div class="product-mark">AI</div>
+                        <h3 data-i18n="aiTitle">AI 应用</h3>
+                        <p data-i18n="aiCopy">
+                            面向教育、效率与创作场景的 AI 应用，强调本地隐私、安全与长期可用性。
+                        </p>
+                        <span data-i18n="appStore">在 App Store 查看</span>
+                    </a>
+
+                    <a class="product-card" href="https://apps.apple.com/app/id6450956188" target="_blank" rel="noopener">
+                        <div class="product-mark">iOS</div>
+                        <h3 data-i18n="mobileTitle">移动工具</h3>
+                        <p data-i18n="mobileCopy">
+                            专注 iOS / 多平台的高质量工具类应用，简洁设计、极致体验。
+                        </p>
+                        <span data-i18n="appStore">在 App Store 查看</span>
+                    </a>
+
+                    <a class="product-card" href="https://apps.apple.com/developer/chengdu-miaozhi-technology-co-ltd/id1465440799" target="_blank" rel="noopener">
+                        <div class="product-mark">Dev</div>
+                        <h3 data-i18n="developerTitle">开发者主页</h3>
+                        <p data-i18n="developerCopy">
+                            浏览我们在 App Store 上发布的全部产品，持续更新与长期维护。
+                        </p>
+                        <span data-i18n="developerCta">查看开发者主页</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="legal-section" id="legal" aria-labelledby="legal-title">
+            <div class="section-inner">
+                <div class="section-heading">
+                    <p class="section-kicker">Policies</p>
+                    <h2 id="legal-title" data-i18n="legalTitle">政策与条款</h2>
+                </div>
+
+                <div class="legal-grid">
+                    <a class="legal-card" href="aboutus/privacy.html?source=home">
+                        <h3 data-i18n="privacyTitle">隐私政策</h3>
+                        <p data-i18n="privacyCopy">了解我们如何处理信息、保护隐私，并说明第三方服务相关事项。</p>
+                        <span data-i18n="readPolicy">阅读政策</span>
+                    </a>
+
+                    <a class="legal-card" href="aboutus/terms.html?source=home">
+                        <h3 data-i18n="termsTitle">服务条款</h3>
+                        <p data-i18n="termsCopy">查看使用我们应用、网站及相关服务时适用的规则和条件。</p>
+                        <span data-i18n="readTerms">查看条款</span>
+                    </a>
+
+                    <a class="legal-card" href="aboutus/child.html?source=home">
+                        <h3 data-i18n="childTitle">儿童健康使用政策</h3>
+                        <p data-i18n="childCopy">了解我们面向儿童和青少年健康使用产品的说明与保护原则。</p>
+                        <span data-i18n="readPolicy">阅读政策</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="company-section" id="company" aria-labelledby="company-title">
+            <div class="section-inner company-card">
+                <div class="company-heading">
+                    <p class="section-kicker">Company</p>
+                    <h2 id="company-title" data-i18n="companyTitle">公司信息</h2>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-item">
+                        <h3 data-i18n="addressTitle">公司地址</h3>
+                        <p>中国（四川）自由贸易试验区成都高新区交子大道500号3栋1单元19层1916号</p>
+                        <p class="en">
+                            Room 1916, Floor 19, Unit 1, Building 3, No. 500 Jiaozi Avenue,
+                            High-Tech Zone, China (Sichuan) Pilot Free Trade Zone, Chengdu, Sichuan, China
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h3 data-i18n="contactTitle">联系方式</h3>
+                        <p><a href="mailto:miaozhi.ai@gmail.com">miaozhi.ai@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <p>
-            © 2025 成都妙至科技有限公司<br>
-            CHENGDU MIAOZHI TECHNOLOGY CO., LTD.
-        </p>
-
-        <!-- 新增：隐私政策 & 服务条款 -->
-        <p class="footer-links">
-            <a href="https://miaozhi-ai.github.io/aboutus/privacy.html" target="_blank" rel="noopener">隐私政策</a>
-            &nbsp;|&nbsp;
-            <a href="https://miaozhi-ai.github.io/aboutus/terms.html" target="_blank" rel="noopener">服务条款</a>
-        </p>
+        <div class="footer-inner">
+            <p>
+                © 2025 成都妙至科技有限公司<br>
+                CHENGDU MIAOZHI TECHNOLOGY CO., LTD.
+            </p>
+            <div class="footer-links" aria-label="法律链接">
+                <a href="aboutus/privacy.html?source=home" data-i18n="privacyTitle">隐私政策</a>
+                <a href="aboutus/terms.html?source=home" data-i18n="termsTitle">服务条款</a>
+                <a href="aboutus/child.html?source=home" data-i18n="childTitle">儿童健康使用政策</a>
+            </div>
+        </div>
     </footer>
 
     <script>
-    document.querySelectorAll('.glow-card').forEach(card => {
-        card.addEventListener('mousemove', e => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            card.style.setProperty('--x', x + 'px');
-            card.style.setProperty('--y', y + 'px');
+        const translations = {
+            zh: {
+                navProducts: "产品",
+                navLegal: "政策",
+                navCompany: "公司",
+                heroTitle: "为日常生活打造可信赖的 AI 产品。",
+                heroSubtitle: "Building thoughtful AI products for everyday life.",
+                viewProducts: "查看产品",
+                contactUs: "联系我们",
+                introTitle: "简洁、可靠且具长期价值的软件产品。",
+                introCopy: "我们专注于 AI 应用、工具类产品与智能体验设计，让技术以更自然、更可靠的方式融入日常工作、学习与创作。",
+                productsTitle: "我们的产品",
+                aiTitle: "AI 应用",
+                aiCopy: "面向教育、效率与创作场景的 AI 应用，强调本地隐私、安全与长期可用性。",
+                mobileTitle: "移动工具",
+                mobileCopy: "专注 iOS / 多平台的高质量工具类应用，简洁设计、极致体验。",
+                developerTitle: "开发者主页",
+                developerCopy: "浏览我们在 App Store 上发布的全部产品，持续更新与长期维护。",
+                appStore: "在 App Store 查看",
+                developerCta: "查看开发者主页",
+                legalTitle: "政策与条款",
+                privacyTitle: "隐私政策",
+                privacyCopy: "了解我们如何处理信息、保护隐私，并说明第三方服务相关事项。",
+                termsTitle: "服务条款",
+                termsCopy: "查看使用我们应用、网站及相关服务时适用的规则和条件。",
+                childTitle: "儿童健康使用政策",
+                childCopy: "了解我们面向儿童和青少年健康使用产品的说明与保护原则。",
+                readPolicy: "阅读政策",
+                readTerms: "查看条款",
+                companyTitle: "公司信息",
+                addressTitle: "公司地址",
+                contactTitle: "联系方式"
+            },
+            en: {
+                navProducts: "Products",
+                navLegal: "Policies",
+                navCompany: "Company",
+                heroTitle: "Thoughtful AI products for everyday life.",
+                heroSubtitle: "为日常生活打造可信赖的 AI 产品。",
+                viewProducts: "View Products",
+                contactUs: "Contact Us",
+                introTitle: "Simple, reliable software built for long-term value.",
+                introCopy: "We focus on AI applications, utility products, and intelligent experience design, bringing technology into daily work, study, and creation in a more natural and dependable way.",
+                productsTitle: "Our Products",
+                aiTitle: "AI Applications",
+                aiCopy: "AI applications for education, productivity, and creation, with an emphasis on privacy, safety, and long-term usability.",
+                mobileTitle: "Mobile Utilities",
+                mobileCopy: "High-quality iOS and multi-platform utilities with simple design and polished experiences.",
+                developerTitle: "Developer Page",
+                developerCopy: "Browse all products we publish on the App Store, with ongoing updates and long-term maintenance.",
+                appStore: "View on the App Store",
+                developerCta: "View Developer Page",
+                legalTitle: "Policies and Terms",
+                privacyTitle: "Privacy Policy",
+                privacyCopy: "Learn how we handle information, protect privacy, and describe matters related to third-party services.",
+                termsTitle: "Terms of Service",
+                termsCopy: "Review the rules and conditions that apply when using our apps, websites, and related services.",
+                childTitle: "Children's Healthy Use Policy",
+                childCopy: "Learn about our principles for healthy product use by children and teenagers.",
+                readPolicy: "Read Policy",
+                readTerms: "View Terms",
+                companyTitle: "Company Information",
+                addressTitle: "Company Address",
+                contactTitle: "Contact"
+            }
+        };
+
+        const languageToggle = document.getElementById("languageToggle");
+
+        function setLanguage(lang) {
+            const next = translations[lang] ? lang : "zh";
+
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.getAttribute("data-i18n");
+                element.textContent = translations[next][key];
+            });
+
+            document.documentElement.lang = next === "zh" ? "zh-CN" : "en";
+            languageToggle.textContent = next === "zh" ? "English" : "中文";
+            languageToggle.setAttribute("aria-label", next === "zh" ? "Switch to English" : "切换到中文");
+            localStorage.setItem("language", next);
+        }
+
+        languageToggle.addEventListener("click", () => {
+            const current = document.documentElement.lang === "zh-CN" ? "zh" : "en";
+            setLanguage(current === "zh" ? "en" : "zh");
         });
 
-        card.addEventListener('mouseleave', () => {
-            card.style.removeProperty('--x');
-            card.style.removeProperty('--y');
+        window.addEventListener("DOMContentLoaded", () => {
+            setLanguage(localStorage.getItem("language") || "zh");
         });
-    });
     </script>
 </body>
-
 </html>
