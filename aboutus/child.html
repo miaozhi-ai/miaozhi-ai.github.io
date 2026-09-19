@@ -71,6 +71,40 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
+      gap: 20px;
+    }
+
+    .header-inner.site-context {
+      justify-content: space-between;
+    }
+
+    .site-nav {
+      display: none;
+      align-items: center;
+      gap: 22px;
+      min-width: 0;
+      font-size: 12px;
+      line-height: 1;
+    }
+
+    .site-nav.visible {
+      display: flex;
+    }
+
+    .site-nav a {
+      color: #424245;
+      white-space: nowrap;
+    }
+
+    .site-nav a:first-child {
+      color: #1d1d1f;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .site-nav a:hover {
+      color: #1d1d1f;
+      text-decoration: none;
     }
 
     /* =========================================================
@@ -81,10 +115,9 @@
       display: inline-flex;
       align-items: center;
 
-      padding: 3px;
+      flex: 0 0 auto;
 
-      background: #e9e9eb;
-      border-radius: 9px;
+      padding: 0;
     }
 
     .language-switch button {
@@ -93,11 +126,11 @@
 
       padding: 5px 12px;
 
-      border-radius: 7px;
+      border-radius: 980px;
 
-      background: transparent;
+      background: #e9e9eb;
 
-      color: #6e6e73;
+      color: #1d1d1f;
 
       font-family: inherit;
       font-size: 12px;
@@ -111,16 +144,8 @@
         box-shadow 0.2s ease;
     }
 
-    .language-switch button.active {
-      background: #ffffff;
-      color: #1d1d1f;
-
-      box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.12);
-    }
-
     .language-switch button:hover {
-      color: #1d1d1f;
+      background: #dedee3;
     }
 
     /* =========================================================
@@ -438,6 +463,12 @@
         padding: 0 16px;
       }
 
+      .site-nav {
+        gap: 14px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
       .container {
         padding: 48px 20px 70px;
       }
@@ -545,9 +576,14 @@
 <body>
   <header class="site-header">
     <div class="header-inner">
+      <nav class="site-nav" id="siteNav" aria-label="Site navigation">
+        <a href="../index.html">妙至科技</a>
+        <a href="../index.html">首页</a>
+        <a href="../index.html#products">产品</a>
+        <a href="../index.html#company">公司</a>
+      </nav>
       <div class="language-switch">
-        <button id="enButton" class="active" onclick="switchLang('en')">English</button>
-        <button id="zhButton" onclick="switchLang('zh')">中文</button>
+        <button id="languageToggle" type="button" onclick="toggleLang()" aria-label="切换到中文">中文</button>
       </div>
     </div>
   </header>
@@ -1205,21 +1241,20 @@
     function switchLang(lang) {
       const english = document.querySelector(".english-content");
       const chinese = document.querySelector(".chinese-content");
-      const enButton = document.getElementById("enButton");
-      const zhButton = document.getElementById("zhButton");
+      const languageToggle = document.getElementById("languageToggle");
 
       if (lang === "zh") {
         english.classList.remove("active");
         chinese.classList.add("active");
-        enButton.classList.remove("active");
-        zhButton.classList.add("active");
+        languageToggle.textContent = "English";
+        languageToggle.setAttribute("aria-label", "Switch to English");
         document.documentElement.lang = "zh-CN";
         localStorage.setItem("language", "zh");
       } else {
         chinese.classList.remove("active");
         english.classList.add("active");
-        zhButton.classList.remove("active");
-        enButton.classList.add("active");
+        languageToggle.textContent = "中文";
+        languageToggle.setAttribute("aria-label", "切换到中文");
         document.documentElement.lang = "en";
         localStorage.setItem("language", "en");
       }
@@ -1227,7 +1262,18 @@
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    function toggleLang() {
+      const current = document.documentElement.lang === "zh-CN" ? "zh" : "en";
+      switchLang(current === "zh" ? "en" : "zh");
+    }
+
     window.addEventListener("DOMContentLoaded", function () {
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("source") === "home") {
+        document.querySelector(".header-inner").classList.add("site-context");
+        document.getElementById("siteNav").classList.add("visible");
+      }
+
       const savedLanguage = localStorage.getItem("language") || "en";
       switchLang(savedLanguage);
     });
